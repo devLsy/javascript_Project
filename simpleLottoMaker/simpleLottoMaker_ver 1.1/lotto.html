@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>simpleLotto</title>
+	<!-- css -->
+	<style>
+	.makedArea {width: 500px;background-color:#EDFFE7;border:1px #eeeeee solid;margin:20px;}
+	#make {background-color:#DBFFD5;width: 80px;height: 30px;}
+	#clear {background-color:#DBFFD5;width: 80px;height: 30px;}
+	#input {width: 180px;height: 20px;}
+	.rolling-banner {position: relative;top: 100px;left: 100px;width: 400px;height: 200px;overflow:hidden;border: 2px solid #000;}
+	.rolling-banner img {position: absolute;top: 0;left: 0;}
+	#banner1 {top: 250px;left: 250px;}
+	</style>		
+	<!-- css end -->	
+
+	<!-- js -->
+	<script type="text/javascript" src=" http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" >
+	</script>
+	<script type="text/javascript" src="./js/lotto.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {	
+			// 인스턴스 생성
+			var lotto = new Lotto();	
+		});	
+	</script>	
+	<!-- js end -->	
+
+</head>
+<body>
+	<h1 class="title">Simple Lotto Maker</h1>
+	<h3 class="comment">금주의 로또 당첨번호를 예상 해봅시다.</h3>	
+	<div class="btnArea">
+		<input type="tel" id="input" placeholder="생성할 갯수를 입력 해주세요.">
+		<button type="button" id="make">번호 생성</button>	
+		<button type="button" id="clear">초기화</button> 
+	</div>
+		<div class="rolling-banner" id="banner1">
+			<img src="images/logo_01.jpg">
+	        <img src="images/logo_02.jpg">
+	        <img src="images/logo_03.jpg">
+	        <img src="images/logo_04.jpg">
+	        <img src="images/logo_05.jpg">
+	        <img src="images/logo_06.jpg">
+		</div>
+	<div class="makedArea">
+	<!-- 로또 번호 동적 생성 영역 -->
+	</div>
+</body>
+</html>
