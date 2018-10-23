@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>avengers</title>
+<meta name="author" content="infightersy@naver.com" charset="utf-8">
+<style>
+@charset "utf-8";	
+.rolling-Banner {position:relative; top:0px; margin:100px; width:450px; height:200px; border:2px solid #E0E0E0; overflow:hidden;}
+.rolling-Banner img {position:absolute; top:0; left:0; margin:0; width:450px;}
+</style>
+<!-- lib import -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>	
+<!-- //lib import -->
+<script>
+$(document).ready(function() {
+	var avengers = new Avengers();
+});
+
+function Avengers() {
+	this.$banners = null;
+	this.$bannerLength = null;
+	this.currentIndex = 0;
+	this.timerID = -1;
+	this.$clock = null;
+
+	this.init();
+	// this.startTime();
+	this.initBannerPos();
+	this.startAuto();
+	this.initEvent();
+}	
+
+Avengers.prototype.init = function() {
+	this.$banners = $("#banner img");
+	// console.log(this.$banners);
+	this.$bannerLength = this.$banners.length;
+	// console.log(this.$bannerLength);
+	this.$clock = $(".time");
+}
+
+Avengers.prototype.showTime = function() {
+	var objDate = new Date();
+	var hours = this.addZero(objDate.getHours())+"시";
+	console.log("시간: " + hours);
+	var minutes = this.addZero(objDate.getMinutes())+"분";
+	console.log("분: " + minutes);
+	var seconds = this.addZero(objDate.getSeconds())+"초";
+	console.log("초: " + seconds);
+
+	var time = hours + minutes + seconds;
+	// this.$clock.html(time);
+}
+
+Avengers.prototype.addZero = function(value) {
+	if(value < 10) {
+		value = "0" + value;
+	}
+	return value;
+}
+
+Avengers.prototype.startTime = function() {
+	var objThis = this;
+	setInterval(function() {
+		objThis.showTime();
+	}, 500);
+}
+
+Avengers.prototype.initBannerPos = function() {
+	this.$banners.css({left:500});
+	this.$banners.eq(this.currentIndex).css({left:0});
+}
+
+Avengers.prototype.startAuto = function() {
+	var objThis = this;
+	if(this.timerID == -1) {
+		this.timerID = setInterval(function() {
+			objThis.nextBanner();
+		}, 2000);
+	}
+}
+
+Avengers.prototype.stopAuto = function() {
+	clearInterval(this.timerID)
+		this.timerID = -1;
+}
+
+Avengers.prototype.initEvent = function() {
+	var objThis = this;
+	this.$banners.mouseenter(function() {
+		console.log("mouseenter");
+		objThis.stopAuto();
+	});
+
+	this.$banners.mouseleave(function() {
+		console.log("mouseleave");
+		objThis.startAuto();
+	});
+}
+
+Avengers.prototype.nextBanner = function() {
+	var currentIndex = this.currentIndex;
+	// console.log(currentIndex);
+	this.currentIndex++;
+
+	if(this.currentIndex >= this.$bannerLength) {
+		this.currentIndex = 0;
+	}
+
+	var $currentBanner = this.$banners.eq(currentIndex);
+	var $nextBanner = this.$banners.eq(this.currentIndex);
+
+	$nextBanner.css({left:200, opacity:0});
+	$currentBanner.stop().animate({left:-200, opacity:0}, 500);
+	$nextBanner.stop().animate({left:0, opacity:1}, 500);
+}
+
+</script>
+	<title>rollingBanner</title>
+</head>
+<body>
+<div class="rolling-Banner" id="banner">
+	<img src="./img/marvel/ironMan.jpg">	
+	<img src="./img/marvel/thor.jpg">	
+	<img src="./img/marvel/Hulk.jpg">	
+	<img src="./img/marvel/Hawkeye.jpg">	
+	<img src="./img/marvel/DoctorStrange.jpg">	
+	<img src="./img/marvel/CaptainAmerica.jpg">	
+	<img src="./img/marvel/BlackWidow.jpg">	
+</div>
+	<div class="time">
+
+	</div>
+</body>		
+</html>	
