@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Dev_BookMark</title>
+<head>
+
+<style type="text/css">
+a {text-decoration: none;}
+#hideBtn {width: 50px;}
+</style>	
+
+	
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+		console.log("page loaded");
+        
+        var dev = new Dev();
+        });
+
+// 클래스 생성
+function Dev() {
+	// 프로퍼티 생성
+	this.$hideBtn = null;
+
+	this.init();
+	this.initEvent();
+}
+
+// 요소 초기화
+Dev.prototype.init = function() {
+	this.$hideBtn = $("#hideBtn");
+}
+	
+// 이벤트 초기화	
+Dev.prototype.initEvent = function() {	
+	this.$hideBtn.click(function() {
+		if($("#hideBtn").val() == "hide") {
+			$(".ulArea").hide();
+			$("#hideBtn").val("show");	
+		} else {
+			$(".ulArea").show();
+			$("#hideBtn").val("hide");	
+		}
+	});
+}
+		
+</script>	
+
+
+</head>
+
+<body>
+<h1>개발 및 기타관련 즐겨찾기</h1>
+<div class="container">
+<input type="button" id="hideBtn" value="hide">
+<ul class="ulArea">
+<li><a href="https://okky.kr/article/453113">제로스펙에 가까웠던 개발자의 카카오 입성기</a><br></li>
+<li><a href="https://okky.kr/article/454436">3번 째 직장에 오기까지의 과정</a><br></li>
+<li><a href="https://okky.kr/article/454108">이클립스 웹 개발하기</a><br></li>
+<li><a href="https://okky.kr/article/452839">블랙잭 게임 구현을 통한 객체 지향 이해하기</a><br></li>
+<li><a href="https://okky.kr/article/451614">초심자를 위한 깃허브 사용법</a><br></li>
+<li><a href="http://blog.meeta.io/m/15">나는 그저 그런 개발자 입니다.</a><br></li>
+<li><a href="https://okky.kr/article/443829">자바 스프링 개발 환경 셋팅하기</a><br></li>
+<li><a href="https://okky.kr/article/424352">개발자가 자기소개서와 이력서 작성하는 법</a><br></li>
+<li><a href="https://okky.kr/article/419599">한국어로 배우는 리액트 사용법</a><br></li>
+<li><a href="https://www.youtube.com/watch?v=SxFEpZ61Bnk&feature=youtu.be&list=PLQy4PodBiAs1ztYy4pUPfTdiv9eKChZMz">부트스트랩 기초편 강의 소개</a><br></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1N048HGcb7da33Kv2-X_LvooiBDIdZuIYA_K8waCBgww/edit?usp=sharing">okky keno님 웹 개발 강의</a><br></li>
+<li><a href="https://okky.kr/article/397774">포트폴리오 공유</a><br></li>
+<li><a href="https://okky.kr/article/381367">프로그래밍 강좌 동영상 모음</a><br></li>
+<li><a href="https://okky.kr/article/380619">디자인패턴과 알고리즘</a><br></li>
+<li><a href="https://okky.kr/article/379331">자바스크립트로 만드는 아날로그 시계</a><br></li>
+<li><a href="https://okky.kr/article/372489">자바 스프링 공부</a><br></li>
+<li><a href="https://okky.kr/article/372485">웹개발자 기준 비전공자 신입으로서 전공자한테 안 밀리고 살아남는 법 tip</a><br></li>
+<li><a href="https://okky.kr/article/368390">아이폰 녹음하는 법(확인 필요)</a><br></li>
+<li><a href="https://okky.kr/article/353568">초보분들을 위한 SpringBoot - maven + mybatis + mysql(mariadb) + jsp 설정법</a><br></li>
+<li><a href="https://okky.kr/article/210816">스프링 시작하기</a><br></li>
+<li><a href="https://okky.kr/article/345329">스프링 용어 정리</a><br></li>
+<li><a href="https://okky.kr/article/344825">okky kenu님 기술 노트 공유</a><br></li>
+<li><a href="https://okky.kr/article/344444">Spring 4 + MyBatis 3 + MariaDB (Maven) 기반 게시판 예제 </a><br></li>
+<li><a href="https://okky.kr/article/311337">개발은 암기과목이 아닙니다.</a><br></li>
+<li><a href="http://www.edwith.org/cs50">비전공자를 위한 컴퓨터과학 입문(커넥트재단)</a><br></li>
+<li><a href="https://okky.kr/article/455504">[펌] 누구든지 하는 리액트: 초심자를 위한 리액트 핵심 강좌</a><br></li>
+<li><a href="https://okky.kr/article/216778">자바의 신 요약본</a><br></li>
+<li><a href="https://okky.kr/article/411863?note=129372">개발 경력 쌓은지 어느덧 1년이란 시간이 흘렀네요.(동기부여 글)</a><br></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
