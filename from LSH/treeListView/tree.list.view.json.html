@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0" />
+<title>Tree List View by JSON</title>
+<style type="text/css">
+#tree {position: relative; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000;}
+#tree ul {list-style: none; margin: 0; padding: 0;}
+#tree li.group {background: #EAEAEA; cursor: pointer;}
+#tree li.user {background: #FAECC5}
+#tree li div {height: 35px; border-bottom: 1px solid #000; line-height: 35px; font-weight: bold; padding-left: 30px; pointer-events: none;}
+#tree img {position: absolute; margin-top: 9px; margin-left: -20px; pointer-events: none;}
+</style>
+<!-- <script type="text/javascript" src="../common/js/jquery-3.1.1.min.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+<script type="text/javascript">
+var org = null;
+var topCode = "ultari";
+function initTreeData() {
+	org = new Array();
+	
+	var ultari = new Object();
+	ultari.id = "ultari";
+	ultari.high = "0";
+	ultari.name = "울타리정보통신";
+	ultari.type = "group";
+	
+	var hansy = new Object();
+	hansy.id = "hansy";
+	hansy.high = "ultari";
+	hansy.name = "한세용";
+	hansy.type = "user";
+	
+	var ultari1 = new Object();
+	ultari1.id = "ultari1";
+	ultari1.high = "ultari";
+	ultari1.name = "개발팀";
+	ultari1.type = "group";
+	
+	var ultari2 = new Object();
+	ultari2.id = "ultari2";
+	ultari2.high = "ultari";
+	ultari2.name = "디자인팀";
+	ultari2.type = "group";
+	
+	var ultari3 = new Object();
+	ultari3.id = "ultari3";
+	ultari3.high = "ultari";
+	ultari3.name = "경영지원팀";
+	ultari3.type = "group";
+	
+	var ultari4 = new Object();
+	ultari4.id = "ultari4";
+	ultari4.high = "ultari1";
+	ultari4.name = "서버팀";
+	ultari4.type = "group";
+	
+	var ultari5 = new Object();
+	ultari5.id = "ultari5";
+	ultari5.high = "ultari1";
+	ultari5.name = "클라이언트";
+	ultari5.type = "group";
+	
+	var scalper = new Object();
+	scalper.id = "scalper";
+	scalper.high = "ultari1";
+	scalper.name = "김성계";
+	scalper.type = "user";
+	
+	var leeji = new Object();
+	leeji.id = "leeji";
+	leeji.high = "ultari3";
+	leeji.name = "이정일";
+	leeji.type = "user";
+	
+	var leesh = new Object();
+	leesh.id = "leesh";
+	leesh.high = "ultari4";
+	leesh.name = "이상호";
+	leesh.type = "user";
+	
+	var leesy = new Object();
+	leesy.id = "leesy";
+	leesy.high = "ultari4";
+	leesy.name = "이상엽";
+	leesy.type = "user";
+	
+	var junggj = new Object();
+	junggj.id = "junggj";
+	junggj.high = "ultari5";
+	junggj.name = "정근조";
+	junggj.type = "user";
+	
+	org.push(ultari);
+	org.push(hansy);
+	org.push(ultari1);
+	org.push(scalper);
+	org.push(ultari2);
+	org.push(leeji);
+	org.push(ultari3);
+	org.push(ultari4);
+	org.push(leesh);
+	org.push(junggj);
+	org.push(ultari5);
+	org.push(leesy);
+	
+	//console.log("[initTreeData] " + JSON.stringify(org));
+}
+$(function(){
+	initTreeData();
+	initTree();
+	
+	treeActionListener();
+});
+function initTree() {
+	var ul = $("<ul>");
+	
+	for (var i = 0; i < org.length; i++) {
+		var grp = org[i];
+		var id = grp.id;
+		var high = grp.high;
+		var name = grp.name;
+		var type = grp.type;
+		
+		//console.log("[initTree] org:" + id + "/" + high + "/" + name + "/" + type);
+		
+		if (high == "0") {
+			var tag = "<li class='@className@' key='@id@' high='@high@' depth='0' isOpen='false'><div>@img@@title@</div></li>"
+			var img = "";
+			var className = type;
+			var style = "";
+			
+			if (type == "group") {
+				img = "<img src='./images/icon_top_tree_up.png' width='15' height='15'/>";
+			} 
+			
+			tag = tag.replace("@className@", className)
+					.replace("@id@", id)
+					.replace("@high@", high)
+					.replace("@img@", img)
+					.replace("@title@", name);
+			
+			ul.append(tag);
+		}
+		
+	}
+	
+	$("#tree").append(ul);
+}
+function treeActionListener() {
+	$(".group").click(function(e){
+		var target = e.target;
+		var key = $(target).attr("key");
+		var title = $(target).children("div").text();
+		var dp = $(target).attr("depth");
+		dp = (dp * 1) + 1;
+		
+		var isOpen = $(target).attr("isOpen");
+		
+		var log = "";
+		log += "[title] " + title + "\n";
+		log += "[id] " + key + "\n";
+		log += "[dp] " + dp + "\n";
+		log += "[isOpen] " + isOpen + "\n";
+		console.log(log);
+		
+		var ul = $("<ul>");
+		
+		if (isOpen == "true") {
+			$(target).attr("isOpen", "false");
+			$(target).children("ul").empty();
+
+			var imgSrc = './images/icon_tree_plus.png';
+			
+			if (key == topCode) {
+				imgSrc = './images/icon_top_tree_up.png';
+			}
+			
+			$(target).children("div").children("img").attr("src", imgSrc);
+		} else {
+			$(target).attr("isOpen", "true");
+			
+			var imgSrc = './images/icon_tree_minus.png';
+			
+			if (key == topCode) {
+				imgSrc = './images/icon_top_tree_down.png';
+			}
+			
+			$(target).children("div").children("img").attr("src", imgSrc);
+			
+			var grpPl = 30 + (dp * 20);
+			var usrPl = grpPl - 20;
+			
+			for (var i = 0; i < org.length; i++) {
+				var grp = org[i];
+				var id = grp.id;
+				var high = grp.high;
+				var name = grp.name;
+				var type = grp.type;
+				
+				if (key == high) {
+					//console.log("[treeActionListener] org: " + id + "/" + high + "/" + name + "/" + type);
+					
+					var tag = "<li class='@className@' key='@id@' high='@high@' depth='@dp@' isOpen='false'><div style='@style@'>@img@@title@</div></li>"
+					var img = "";
+					var className = type;
+					var imgSrc = "./images/icon_tree_plus.png";
+					var style = "padding-left: " + usrPl + "px";
+					
+					if (type == "group") {
+						img = "<img src='@imgSrc@' width='15' height='15'/>";
+						className = "group";
+						style = "padding-left: " + grpPl + "px";
+					}  
+					
+					tag = tag.replace("@className@", className)
+							.replace("@id@", id)
+							.replace("@high@", high)
+							.replace("@img@", img)
+							.replace("@title@", name)
+							.replace("@dp@", dp)
+							.replace("@style@", style)
+							.replace("@imgSrc@", imgSrc);
+					
+					ul.append(tag);
+				}
+			}
+			
+			$(target).append(ul);
+		}
+	});
+}
+</script>
+</head>
+<body>
+	<div id="tree"></div>
+</body>
+</html>
