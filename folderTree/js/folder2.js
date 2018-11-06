@@ -1,73 +1,45 @@
-// jQuery plugin
-(function($) {
-	$.fn.folderAccordionMenu = function() {
-		// 선택자에 해당하는 요소 개수만큼 folderAccordionMenu 객체 생성
-		this.each(function(index) {
-			var $this = $(this);
-			var folder = new FolderMenu($(this));	
-			// 현재 객체를 data() 이용해서 저장
-			$this.data('folderAccorionMenu', folder);		
-		});
-		return this;
-	}	
-	/*
-	* 초기화 시 선택한 인덱스 아이템 선택
-	* @param mainIndex: 메인 인덱스
-	* @param subIndex: 서브 인덱스
-	* @param animation: 애니메이션 적용 여부(기본값 true)
-	*/
-	$.fn.selectFolderAccordionMenu = function(mainIndex, subIndex, animation) {
-		this.each(function(index) {
-			// 위에서 저장한 객체를 가져옴
-			var folderMenu = $(this).data('folderAccorionMenu');
-			folderMenu.selectMenu(mainIndex, subIndex, animation);	
-		});
-		return this;
-	}
-})(jQuery);	
-
 // 클래스 생성
 function FolderMenu(selector) {
 	this.$accordionMenu = null;	// 폴더 아코디언 전체 영역
-	this._$mainMenuItems = null;	// [Heroes>하위내용]의 한 덩어리 영역
-	this._$selectSubItem = null;	// 서브메뉴 아이템 선택
+	this.$mainMenuItems = null;	// [Heroes>하위내용]의 한 덩어리 영역
+	this.$selectSubItem = null;	// 서브메뉴 아이템 선택
 	// 함수 실행
-	this._init(selector);
-	this._initSubMenuPanel();
-	this._initEvent(); 
+	this.init(selector);
+	this.initSubMenuPanel();
+	this.initEvent(); 
 	// 함수 실행 종료
 }	
 /*
 * 요소 초기화
 * @param selector: 선택자
-*/	
-FolderMenu.prototype._init = function(selector) {
+*/
+FolderMenu.prototype.init = function(selector) {
 	// 폴더 아코디언 전체 영역
 	this.$accordionMenu = $(selector);
 	// [Heroes>하위내용]의 한 덩어리 영역
-	this._$mainMenuItems = this.$accordionMenu.children('li');
+	this.$mainMenuItems = this.$accordionMenu.children('li');
 };
 // 이벤트 초기화
-FolderMenu.prototype._initEvent = function() {
-	// alert('어서와 어벤저스는 처음이지?');
+FolderMenu.prototype.initEvent = function() {
 	var objThis = this;
 	// 제목영역에 클릭 이벤트 리스너 추가
-	this._$mainMenuItems.children('.main-title').click(function(e) {
+	this.$mainMenuItems.children('.main-title').click(function(e) {
 		// 제목영역 아무곳이나 클릭해도 이벤트 먹도록 부모노드값 설정
 		var $item = $(this).parent();
+		// console.log($item);
 		objThis.toggleSubMenuPanel($item);
 	});
 	// 제목 - 하위내용에 클릭 이벤트 리스너 추가
-	this._$mainMenuItems.find('.sub li').click(function(e) {
+	this.$mainMenuItems.find('.sub li').click(function(e) {
 		// 선택한 객체를 인자값으로 전달	
-		objThis._selectSubMenuItem($(this));
-		// alert('My Name is ' + $(this).attr('value'));	
+		objThis.selectSubMenuItem($(this));
 	});
 }
-// 서브 패널 초기화(초기 시작 시 열거나 닫힌 상태 설정)
-FolderMenu.prototype._initSubMenuPanel = function() {
+// 서브 패널 초기화(초기 시작 시 닫힌 상태로 만들기)
+FolderMenu.prototype.initSubMenuPanel = function() {
 	var objThis = this;
-	this._$mainMenuItems.each(function(index) {
+	// 
+	this.$mainMenuItems.each(function(index) {
 		// 선택한 1depth 영역(제목 밑에 내용부분..)
 		var $item = $(this);
 		var $subMenu = $item.find('.sub');
@@ -81,11 +53,15 @@ FolderMenu.prototype._initSubMenuPanel = function() {
 			// 폴더의 하위 내용이 있는 경우
 			switch(dataExt) {
 				case 'open':
-					objThis.openSubMenu($item, false); // 서브메뉴패널 열기 	
+					objThis.setFolderState($item, 'open');
+					console.log('하위내용이 있습니다.');
+					objThis.openSubMenu($item, false);	
 					break;
 				case 'close':
 					$item.attr('data-extension', 'close');
-					objThis.closeSubMenu($item, false); // 서브메뉴패널 닫기		
+					objThis.setFolderState($item, 'close');
+					console.log('하위내용이 없습니다.');
+					objThis.closeSubMenu($item, false);		
 					break;
 				default:
 					return;
@@ -101,6 +77,7 @@ FolderMenu.prototype._initSubMenuPanel = function() {
 FolderMenu.prototype.setFolderState = function($item, state) {
 	// <div class="main-title"><span class="folder close"> 이부분
 	var $folder = $item.find('.main-title .folder');
+	// console.log($folder);
 	// 기존 클래스 모두 제거
 	$folder.removeClass();
 	// 클래스 추가(하위 내용이 있을 경우 아이콘을 +로 변경, 하위 내용도 표시)
@@ -117,6 +94,7 @@ FolderMenu.prototype.openSubMenu = function($item, animation) {
 		$item.attr('data-extension', 'open');
 
 		var $subMenu = $item.find('.sub');
+		// console.log($subMenu);
 		// 애니메이션 적용 안한 경우
 		if(animation === 'false') {
 			$subMenu.css({marginTop:0});
@@ -124,8 +102,6 @@ FolderMenu.prototype.openSubMenu = function($item, animation) {
 			$subMenu.stop().animate({marginTop:0}, 300, 'easeInCubic');
 		} // 폴더상태 열기로 변경
 		this.setFolderState($item, 'open');
-		// open 이벤트 발생
-		// this._dispatchOpenCloseEvent($item, 'open');
 	}	
 }
 /*
@@ -148,10 +124,8 @@ FolderMenu.prototype.closeSubMenu = function($item, animation) {
 			$subMenu.stop().animate({marginTop:SubMenuPanelHeight}, 300, 'easeInCubic');
 		} // 폴더상태 닫기로 변경
 		this.setFolderState($item, 'close');
-		// close 이벤트 발생
-		// this._dispatchOpenCloseEvent($item, 'close');
 	}	
-}	
+}
 /* 
 * 하위 폴더 열고 닫기
 * @param $item: 선택한 아이템
@@ -182,7 +156,7 @@ FolderMenu.prototype.toggleSubMenuPanel = function($item) {
 */
 FolderMenu.prototype.closeSubMenuAt = function(index, animation) {
 	// 선택한 메뉴의 인덱스 번지
-	var $item = this._$mainMenuItems.eq(index);
+	var $item = this.$mainMenuItems.eq(index);
 	this.closeSubMenu($item, animation);
 }
 /*
@@ -192,61 +166,23 @@ FolderMenu.prototype.closeSubMenuAt = function(index, animation) {
 */
 FolderMenu.prototype.openSubMenuAt = function(index, animation) {
 	// 선택한 메뉴의 인덱스 번지
-	var $item = this._$mainMenuItems.eq(index);
+	var $item = this.$mainMenuItems.eq(index);
 	this.openSubMenu($item, animation);
 }
 /*
 * 서브메뉴 아이템 선택
 * @param $item: 선택한 메뉴 아이템
 */
-FolderMenu.prototype._selectSubMenuItem = function($item) {
-	var $oldItem = this._$selectSubItem;
+FolderMenu.prototype.selectSubMenuItem = function($item) {
 
-	if(this._$selectSubItem != null) {
-		this._$selectSubItem.removeClass('select');
+	if(this.$selectSubItem != null) {
+		this.$selectSubItem.removeClass('select');
 	} // 선택한 메뉴 아이템 저장
-	this._$selectSubItem = $item;	
-	// 선택한 메뉴 아이템 색상 변경	
-	this._$selectSubItem.addClass('select');
-	// 선택 이벤트 발생
-	// this._dispatchSelectEvent($oldItem, this._$selectSubItem);
-}		
-/*
-* 메뉴 선택 기능(초기 실행 시 미리 메뉴가 선택되어 있게 하는 기능)
-* @param mainIndex: 메인 메뉴 아이템
-* @param subIndex: 서브 메뉴 아이템
-* @param animation: 애니메이션 적용 여부(기본값 true)
-*/
-FolderMenu.prototype.selectMenu = function(mainIndex, subIndex, animation) {
-	var $item = this._$mainMenuItems.eq(mainIndex); // 메인 메뉴 아이템
-	var $subMenuItem = $item.find('.sub li').eq(subIndex); // 서브 메뉴 아이템
-	// 서브메뉴 아이템이 있는 경우
-	if($subMenuItem) {
-		this.openSubMenu($item, animation); // 서브메뉴 패널 열기
-		this._selectSubMenuItem($subMenuItem); // 서브 메뉴 아이템 선택
-	}
+	this.$selectSubItem = $item;
+	// 선택한 메뉴 아이템 색상 변경
+	this.$selectSubItem.addClass('select');
 }
-/*
-* open, close 이벤트 발생(사용자 이벤트)
-* @param $item: 선택한 아이템
-* @param eventName: 발생 이벤트 이름
-*/
-// FolderMenu.prototype._dispatchOpenCloseEvent = function($item, eventName) {
-// 	var evt = jQuery.Event(eventName);
-// 	evt.$target = $item;
-// 	this.$accordionMenu.trigger(evt); // 트리거 발생시킴
-// }
-/*
-* select 이벤트 발생(사용자 이벤트)
-* @param $oldItem: 이전에 선택한 아이템
-* @param $newItem: 새로 선택한 아이템
-*/
-// FolderMenu.prototype._dispatchSelectEvent = function($oldItem, $newItem) {
-// 	var evt = jQuery.Event('select');
-// 	evt.$oldItem = $oldItem;
-// 	evt.$newItem = $newItem;
-// 	this.$accordionMenu.trigger(evt); // 트리거 발생시킴
-// }
+	
 
 
 	

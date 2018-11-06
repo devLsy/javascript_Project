@@ -1,28 +1,30 @@
 * {padding:0; margin:0;}
-body {font-size:10pt;}
-/*폴더 전체 틀*/
-#accordionMenu1 {margin:100px; width:300px; border:2px solid #BDBDBD}
-h1 {font-size:20px;}
-.accordion-menu {position:relative; list-style:none; border:4px solid #eee;}
+body{font-size:9pt;}	
+/*폴더 아코디언 전체 영역(id selector)*/
+#accordionMenu1 {margin:100px; width:300px;}
+/*폴더 아코디언 전체 영역(class selector)*/
+.accordion-menu {position:relative; list-style: none; border:4px solid #eee;}
 /*구분선*/
-.accordion-menu>li {overflow:hidden; border:1px solid #000; cursor:pointer;}
+.accordion-menu>li {overflow:hidden; border:1px solid #000;cursor:pointer;}
 /*폴더의 최상위 제목 영역*/
-.accordion-menu li .main-title {background-color:#fff; padding:10px; vertical-align:middle;}
+.accordion-menu li .main-title {background-color:#fff; padding:10px; vertical-align:middle; position:relative; z-index:100;}
+/*폴더의 최상위 제목 영역 앞쪽의 a태그 부분*/
+.accordion-menu li .main-title a {display: inline-block; height:20px; line-height:20px; text-align: center; vertical-align:middle;}
 /*폴더의 최상위 제목 영역 앞쪽의 span 영역(버튼 이미지 넣는 영역)*/
-.accordion-menu li .main-title .folder {display: inline-block; width:20px; height:20px; overflow:hidden; line-height:20px; text-align:center; vertical-align:middle; margin-right:5px; text-indent: -100px; background-image:url("../images/folder.png"); background-position: 0px -40px;}
-/*- 버튼 이미지 표시*/
-.accordion-menu li .main-title .folder.close {background-position: 0px -40px;}
+.accordion-menu li .main-title .folder {display: inline-block; width:20px; height:20px; overflow:hidden; line-height:20px; text-align: center; vertical-align:middle; margin-right:5px; text-indent: -100px; background-image:url("../images/folder.png"); /* 기본은 .close */background-position : 0px -40px;}
+/*하위 폴더 내용 빈값으로 설정*/
+.accordion-menu li .main-title .folder.empty {background-position : 0 0;}
 /*+ 버튼 이미지 표시*/
-.accordion-menu li .main-title .folder.open {background-position: 0px -20px;}
+.accordion-menu li .main-title .folder.open {background-position : 0px -20px;}
+/*- 버튼 이미지 표시*/
+.accordion-menu li .main-title .folder.close {background-position : 0px -40px;}
 /* 하위 메뉴*/
-.accordion-menu li ul.sub {list-style:none; margin-left:30px; margin-bottom:20px; z-index:90; position:relative;}
+.accordion-menu li ul.sub {	list-style: none; margin-left:30px; margin-bottom:20px; z-index:90; position:relative;}
 /*하위 메뉴 표시 */
-.accordion-menu li ul.sub .open {display:block;}	
+.accordion-menu li ul.sub.open {display:block;}
 /*하위 메뉴 숨김 */
-.accordion-menu li ul.sub .hide {display:none;}
+.accordion-menu li ul.sub.hide {display:none;}
 /*하위 메뉴의 리스트들*/
-.accordion-menu li ul.sub li {height:20px; padding:10px; line-height:20px; vertical-align:middle; cursor:pointer;}
+.accordion-menu li ul.sub li {height:20px; padding:10px; line-height:20px; vertical-align:middle;cursor:pointer;}
 /*하위 메뉴 아이템 선택 했을 때 배경색상 변경*/
-.accordion-menu li ul.sub li.select {background-color:#E4F7BA}
-
-
+.accordion-menu li ul.sub li.select {background-color:#CEFBC9;}

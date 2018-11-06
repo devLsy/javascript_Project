@@ -5,45 +5,49 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
 <script src="./js/folder.js"></script>
 <script src="./libs/jquery.easing.1.3.js"></script>
-<!-- js start -->
-<script>
-	$(document).ready(function() {
-		// plugin 실행
-		$('#accordionMenu1').folderAccordionMenu();
-		// 선택한 인덱스 선택 plugin 실행
-		$('#accordionMenu1').selectFolderAccordionMenu(0, 1, false);
-	});
-</script>	
-<!-- js end -->
 </head>
 <body>
+
 	<ul class="accordion-menu" id="accordionMenu1">
 		<!-- 하위 폴더 상태 -->
 		<li data-extension="open"> <!-- ☜ 이상태값에 따라서 하위폴더 open, close 결정 -->
 			<div class="main-title"><span class="folder"></span><a>Heroes</a></div>
+			<!-- 1depth -->	
 			<ul class="sub">
-				<li value='Captin America'><a>Captin America</a></li>
-				<li value='ironman'><a>ironman</a></li>
-				<li value='black Widow'><a>black Widow</a></li>
-				<li value='doctor Strange'><a>doctor Strange</a></li>
+				<li><a>Captin America</a></li>
+				<li><a>ironman</a></li>
+				<li><a>black Widow</a></li>
+				<li><a>doctor Strange</a></li>
 			</ul>	
 		</li>		
+		<!-- 하위 폴더 상태 -->
 		<li data-extension="close">		
 			<div class="main-title"><span class="folder"></span><a>Vilein</a></div>
+			<!-- 1depth -->
 			<ul class="sub">
-				<li value='Thnos'><a>Thnos</a></li>
-				<li value='Loki'><a>Loki</a></li>
-				<li value='Hella'><a>Hella</a></li>
-				<li value='Dormammu'><a>Dormammu</a></li>
+				<li><a>Thnos</a></li>
+				<li><a>Loki</a></li>
+				<li><a>Hella</a></li>
+				<li><a>Dormammu</a></li>
 			</ul>
 		</li>	
+		<!-- 하위 폴더 상태 -->
 		<li data-extension="close">	
 			<div class="main-title"><span class="folder"></span><a>Etc..</a> </div>
+			<!-- 1depth -->
 			<ul class="sub">
-				<li value='Odin'><a>Odin</a></li>
-				<li value='Surtur'><a>Surtur</a></li>	
+				<li><a>Odin</a></li>
+				<li><a>Surtur</a></li>	
 			</ul>
 		</li>
 	</ul>
 </body>
+<!-- js start -->
+<script>
+	$(document).ready(function() {
+		// 인스턴스 생성
+		var folder = new FolderMenu('.accordion-menu');
+	});
+</script>	
+<!-- js end -->
 </html>
