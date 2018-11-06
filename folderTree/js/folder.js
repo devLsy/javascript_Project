@@ -49,7 +49,6 @@ FolderMenu.prototype._init = function(selector) {
 };
 // 이벤트 초기화
 FolderMenu.prototype._initEvent = function() {
-	// alert('어서와 어벤저스는 처음이지?');
 	var objThis = this;
 	// 제목영역에 클릭 이벤트 리스너 추가
 	this._$mainMenuItems.children('.main-title').click(function(e) {
@@ -59,11 +58,13 @@ FolderMenu.prototype._initEvent = function() {
 	});
 	// 제목 - 하위내용에 클릭 이벤트 리스너 추가
 	this._$mainMenuItems.find('.sub li').click(function(e) {
+		var subMenuVal = ($(this).attr('value'));
 		// 선택한 객체를 인자값으로 전달	
 		objThis._selectSubMenuItem($(this));
-		// alert('My Name is ' + $(this).attr('value'));	
+		// 하위내용 값 저장
+		// var subMenuVal = ($(this).attr('value'));
 	});
-}
+}	
 // 서브 패널 초기화(초기 시작 시 열거나 닫힌 상태 설정)
 FolderMenu.prototype._initSubMenuPanel = function() {
 	var objThis = this;
@@ -124,8 +125,6 @@ FolderMenu.prototype.openSubMenu = function($item, animation) {
 			$subMenu.stop().animate({marginTop:0}, 300, 'easeInCubic');
 		} // 폴더상태 열기로 변경
 		this.setFolderState($item, 'open');
-		// open 이벤트 발생
-		// this._dispatchOpenCloseEvent($item, 'open');
 	}	
 }
 /*
@@ -148,8 +147,6 @@ FolderMenu.prototype.closeSubMenu = function($item, animation) {
 			$subMenu.stop().animate({marginTop:SubMenuPanelHeight}, 300, 'easeInCubic');
 		} // 폴더상태 닫기로 변경
 		this.setFolderState($item, 'close');
-		// close 이벤트 발생
-		// this._dispatchOpenCloseEvent($item, 'close');
 	}	
 }	
 /* 
@@ -200,24 +197,24 @@ FolderMenu.prototype.openSubMenuAt = function(index, animation) {
 * @param $item: 선택한 메뉴 아이템
 */
 FolderMenu.prototype._selectSubMenuItem = function($item) {
-	var $oldItem = this._$selectSubItem;
-
+	// 선택한 서브메뉴 아이템의 인덱스
 	if(this._$selectSubItem != null) {
 		this._$selectSubItem.removeClass('select');
 	} // 선택한 메뉴 아이템 저장
-	this._$selectSubItem = $item;	
+	// $subIndex = $item.index();
+	this._$selectSubItem = $item;
+	var $subMenuVal = $item.attr('value');		
 	// 선택한 메뉴 아이템 색상 변경	
 	this._$selectSubItem.addClass('select');
-	// 선택 이벤트 발생
-	// this._dispatchSelectEvent($oldItem, this._$selectSubItem);
+	this.makeImage($subMenuVal);
 }		
 /*
-* 메뉴 선택 기능(초기 실행 시 미리 메뉴가 선택되어 있게 하는 기능)
+* 메뉴 선택 기능(초기 실행 시 미리 메뉴가 선택되어 있게 하는 기능)(선택사항)
 * @param mainIndex: 메인 메뉴 아이템
 * @param subIndex: 서브 메뉴 아이템
 * @param animation: 애니메이션 적용 여부(기본값 true)
 */
-FolderMenu.prototype.selectMenu = function(mainIndex, subIndex, animation) {
+/*FolderMenu.prototype.selectMenu = function(mainIndex, subIndex, animation) {
 	var $item = this._$mainMenuItems.eq(mainIndex); // 메인 메뉴 아이템
 	var $subMenuItem = $item.find('.sub li').eq(subIndex); // 서브 메뉴 아이템
 	// 서브메뉴 아이템이 있는 경우
@@ -225,29 +222,26 @@ FolderMenu.prototype.selectMenu = function(mainIndex, subIndex, animation) {
 		this.openSubMenu($item, animation); // 서브메뉴 패널 열기
 		this._selectSubMenuItem($subMenuItem); // 서브 메뉴 아이템 선택
 	}
-}
-/*
-* open, close 이벤트 발생(사용자 이벤트)
+}*/	
+/*	
+* 선택한 서브메뉴에 해당되는 이미지 동적 생성
+* @param index: 선택한 서브메뉴 인덱스	
 * @param $item: 선택한 아이템
-* @param eventName: 발생 이벤트 이름
 */
-// FolderMenu.prototype._dispatchOpenCloseEvent = function($item, eventName) {
-// 	var evt = jQuery.Event(eventName);
-// 	evt.$target = $item;
-// 	this.$accordionMenu.trigger(evt); // 트리거 발생시킴
-// }
-/*
-* select 이벤트 발생(사용자 이벤트)
-* @param $oldItem: 이전에 선택한 아이템
-* @param $newItem: 새로 선택한 아이템
-*/
-// FolderMenu.prototype._dispatchSelectEvent = function($oldItem, $newItem) {
-// 	var evt = jQuery.Event('select');
-// 	evt.$oldItem = $oldItem;
-// 	evt.$newItem = $newItem;
-// 	this.$accordionMenu.trigger(evt); // 트리거 발생시킴
-// }
+FolderMenu.prototype.makeImage = function($item) {
+	$('#imgDiv').empty();
+	var subMenuVal = $item;
+	var imgPath = './images/Heroes/';
+	var path = imgPath + subMenuVal + '.jpg';	
+	console.log(path);
+	var $img = $('<img>').attr('src', path);
+
+	$('#imgDiv').append($img);
+}
+$('#imgDiv').empty();
+	
 
 
 	
 
+	

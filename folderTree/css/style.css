@@ -28,3 +28,5 @@ body{font-size:9pt;}
 .accordion-menu li ul.sub li {height:20px; padding:10px; line-height:20px; vertical-align:middle;cursor:pointer;}
 /*하위 메뉴 아이템 선택 했을 때 배경색상 변경*/
 .accordion-menu li ul.sub li.select {background-color:#CEFBC9;}
+/*동적 생성 이미지*/
+.imgArea {position:relative; margin-left:450px; cursor:pointer; border:1px solid #000; padding:12px 12px 20px 12px;}

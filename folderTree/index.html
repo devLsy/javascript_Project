@@ -11,21 +11,22 @@
 		// plugin 실행
 		$('#accordionMenu1').folderAccordionMenu();
 		// 선택한 인덱스 선택 plugin 실행
-		$('#accordionMenu1').selectFolderAccordionMenu(0, 1, false);
+		// $('#accordionMenu1').selectFolderAccordionMenu(0, 1, false);
 	});
 </script>	
 <!-- js end -->
 </head>
 <body>
+	<!-- <iframe src='' style='width:600' heigth='500' scrolling='auto'></iframe> -->
 	<ul class="accordion-menu" id="accordionMenu1">
 		<!-- 하위 폴더 상태 -->
-		<li data-extension="open"> <!-- ☜ 이상태값에 따라서 하위폴더 open, close 결정 -->
+		<li data-extension="close"> <!-- ☜ 이상태값에 따라서 하위폴더 open, close 결정 -->
 			<div class="main-title"><span class="folder"></span><a>Heroes</a></div>
 			<ul class="sub">
-				<li value='Captin America'><a>Captin America</a></li>
-				<li value='ironman'><a>ironman</a></li>
-				<li value='black Widow'><a>black Widow</a></li>
-				<li value='doctor Strange'><a>doctor Strange</a></li>
+				<li value='CaptinAmerica'><a>CaptinAmerica</a></li>
+				<li value='ironMan'><a>ironMan</a></li>
+				<li value='blackWidow'><a>blackWidow</a></li>
+				<li value='doctorStrange'><a>doctorStrange</a></li>
 			</ul>	
 		</li>		
 		<li data-extension="close">		
