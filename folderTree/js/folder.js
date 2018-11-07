@@ -225,20 +225,20 @@ FolderMenu.prototype._selectSubMenuItem = function($item) {
 }*/	
 /*	
 * 선택한 서브메뉴에 해당되는 이미지 동적 생성
-* @param index: 선택한 서브메뉴 인덱스	
 * @param $item: 선택한 아이템
+* 새로 선택한 내용이 있을 경우 이전에 보였던 이미지 삭제 기능 추가 필요(수정 예정)
 */
 FolderMenu.prototype.makeImage = function($item) {
-	$('#imgDiv').empty();
-	var subMenuVal = $item;
+	var subMenuval = $item;
 	var imgPath = './images/Heroes/';
-	var path = imgPath + subMenuVal + '.jpg';	
-	console.log(path);
+	var path = imgPath + subMenuval + '.jpg';
+	// 이미지 설정
 	var $img = $('<img>').attr('src', path);
-
+	// 이미지 영역 css 적용
+	$img.addClass('imgDiv');
+	// 이미지영역에 이미지 추가
 	$('#imgDiv').append($img);
-}
-$('#imgDiv').empty();
+}	
 	
 
 
