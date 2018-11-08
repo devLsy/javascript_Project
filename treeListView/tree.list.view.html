@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0" />
+<title>Tree List View</title>
+<style type="text/css">
+#tree {position: relative; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000;}
+#tree ul {list-style: none; margin: 0; padding: 0;}
+#tree li.group {background: #EAEAEA}
+#tree li.user {background: #FAECC5}
+#tree li div {height: 35px; border-bottom: 1px solid #000; line-height: 35px; font-weight: bold; padding-left: 30px; pointer-events: none;}
+#tree img {position: absolute; margin-top: 9px; margin-left: -20px; pointer-events: none;}
+</style>
+<!-- <script type="text/javascript" src="../common/js/jquery-3.1.1.min.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+<script type="text/javascript">
+$(function(){
+	treeListView();
+});
+function treeListView() {
+	$("#tree ul:not(:first)").hide();
+	$("#tree li:not(:has(ul))").css({cursor: 'default'});
+	$("#tree li:has(ul)").css({cursor: 'pointer'});
+	$('#tree li:has(ul)').click(function(e){
+		var target = e.target;
+		var isRoot = $(this).is(".root");
+		var children = $(this).children("ul").children("li");
+		var dp = "1";
+		if (this == target) {
+			if (isRoot) {
+	 			$(this).attr('depth', dp);
+	 		} else {
+	 			dp = $(this).attr('depth');
+	 		}
+			
+			children.attr('depth', (dp * 1) + 1);
+			
+			var log = "[name] " + $(this).children("div").text() + "\n";
+			log += "[isRoot] " + isRoot + "\n";
+			log += "[div.padding-left] " + $(this).children("div").css("padding-left") + "\n";
+			log += "[depth] " + dp + "\n";
+			
+			if($(this).children("ul").is(":hidden")) {
+				var imgSrc = './images/icon_tree_minus.png';
+				
+				if (isRoot) {
+	 				imgSrc = './images/icon_top_tree_down.png';
+	 			}
+				
+				var grpPl = 30 + (dp * 20);
+				var usrPl = grpPl - 20;
+				
+				log += "[child groups left padding] " + grpPl + "\n";
+				log += "[child users left padding] " + usrPl + "\n";
+				
+				$(this).children("ul").slideDown();
+				
+				$(this).children("div").children("img").attr("src", imgSrc);
+				$(this).children("ul").children("li.group").children("div").css({"padding-left": grpPl});
+				$(this).children("ul").children("li.user").children("div").css({"padding-left": usrPl});
+			} else {
+				var imgSrc = './images/icon_tree_plus.png';
+				
+				if (isRoot) {
+	 				imgSrc = './images/icon_top_tree_up.png';
+	 			}
+				
+				$(this).children("ul").slideUp();
+				$(this).children("div").children("img").attr("src", imgSrc);
+			}
+			
+			console.log(log);
+		}
+	});
+}
+</script>
+</head>
+<body>
+	<div id="tree">
+		<ul>
+			<li class="group root"><div><img src="./images/icon_top_tree_up.png" width="15" height="15">울타리정보통신</div>
+				<ul>
+					<li class="user"><div>한세용</div></li>
+					<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">영업팀</div>
+						<ul>
+							<li class="user"><div>최종필</div></li>
+						</ul>
+					</li>
+					<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">경영지원팀</div>
+						<ul>
+							<li class="user"><div>한우용</div></li>
+							<li class="user"><div>함경희</div></li>
+							<li class="user"><div>송은석</div></li>
+						</ul>
+					</li>
+					<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">개발팀</div>
+						<ul>
+							<li class="user"><div>김성계</div></li>
+							<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">개발1팀</div>
+								<ul>
+									<li class="user"><div>이상호</div></li>
+									<li class="user"><div>김현준</div></li>
+									<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">테스트</div>
+										<ul>
+											<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">테스트2</div></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">개발2팀</div>
+								<ul>
+									<li class="user"><div>임정재</div></li>
+									<li class="user"><div>황재문</div></li>
+									<li class="user"><div>박종대</div></li>
+									<li class="user"><div>이상엽</div></li>
+									<li class="user"><div>김예설</div></li>
+								</ul>
+							</li>
+							<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">클라이언트</div>
+								<ul>
+									<li class="user"><div>김상훈</div></li>
+									<li class="user"><div>권세리</div></li>
+								</ul>
+							</li>
+							<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">모바팀</div>
+								<ul>
+									<li class="user"><div>정근조</div></li>
+									<li class="user"><div>함홍주</div></li>
+									<li class="user"><div>박승희</div></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">디자인팀</div>
+						<ul>
+							<li class="user"><div>김세진</div></li>
+						</ul>
+					</li>
+					<li class="group"><div><img src="./images/icon_tree_plus.png" width="15" height="15">사업관리</div>
+						<ul>
+							<li class="user"><div>이정일</div></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
