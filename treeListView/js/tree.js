@@ -4,11 +4,11 @@ var topCode = "marvel";
 
 $(document).ready(function(){
 	initTreeData(); // 트리데이터 초기화
-	initTree();		// 트리 초기화
+	initTree();		// 트리 초기화(동적으로 li 태그 생성)
 	treeActionListener(); // 클릭 이벤트 리스너
 });
-// 트리 데이터 초기화
-function initTreeData() {
+// 트리 데이터 초기화	
+function initTreeData() {	
 	org = new Array();
 	// group
 	var marvel = {id: "marvel", high: "0", name: "Marvel", type: "group"};
@@ -26,130 +26,108 @@ function initTreeData() {
 	var hella = {id: "hella", high: "marvel2", name: "Hella", type: "user"};
 	var thnos = {id: "thnos", high: "marvel2", name: "Thnos", type: "user"};
 	var loki = {id: "loki", high: "marvel2", name: "Loki", type: "user"};
-	// group data store
-	org.push(marvel);
-	org.push(sml);
-	org.push(heroes);
-	org.push(vilein);	
-	// group data store
-	org.push(doctorStrange);
-	org.push(thorOdinson);	
-	org.push(ironMan);
-	org.push(hulk);
-	org.push(captinAmerica);
-	// vilein data store
-	org.push(dormammu);
-	org.push(hella);
-	org.push(thnos);
-	org.push(loki);
+	// group, user data store
+	org.push(marvel, sml, heroes, vilein, doctorStrange, thorOdinson, ironMan, hulk, captinAmerica, dormammu, hella, thnos, loki);
 	// console.log("[initTreeData] " + JSON.stringify(org)); // json 데이터 String값으로 출력
 }
-// 트리 초기화(동적으로 태그 생성)
+// 트리 초기화(최상위 폴더 동적으로 생성)
 function initTree() {
 	var ul = $("<ul>");
 	
 	for (var i = 0; i < org.length; i++) {
-		var grp = org[i];    // 배열의 값을 변수에 저장
+		var grp = org[i];    // 배열의 값 저장
 		var id = grp.id;     // id store
 		var high = grp.high; // high store
 		var name = grp.name; // name store
-		var type = grp.type; // type store
-		
+		var type = grp.type; // type store	
 		// console.log("[initTree] org:" + "id: " + id + "/" + "high: " + high + "/" + "name:" + name + "/" + "type:" + type);
-		
 		if (high == "0") { // 최상위 depth인 경우
 			var tag = "<li class='@className@' key='@id@' high='@high@' depth='0' isOpen='false'><div>@img@@title@</div></li>"
-			// console.log('1. tag: ' + tag);
-			var img = "";
-			var className = type;
-			var style = "";
-			
-			if (type == "group") { // 그룹인 경우 ↑ 위쪽모양 이미지로 
+			var img = ""; var className = type; var style = "";
+
+			if (type == "group") { // 그룹인 경우 ↑이미지 표시
 				img = "<img src='./images/icon_top_tree_up.png' width='15' height='15'/>";
 			} 
-			// console.log('img: ' + img);
-			
-			tag = tag.replace("@className@", className)
+			tag = tag.replace("@className@", className) // li 태그의 value들 변환
 					.replace("@id@", id)
 					.replace("@high@", high)
 					.replace("@img@", img)
 					.replace("@title@", name);
-			// ul에 tag의 내용 추가
-			// console.log('tag: ' + tag);
-			ul.append(tag);
+			ul.append(tag); // li 태그의 내용들을 ul태그뒤에 추가
 		}
-	}
-	$("#tree").append(ul);
+	} 
+	$("#tree").append(ul); // 최종적으로 #tree에 li를 포함한 ul태그 생성
 }
 // 트리 클릭 이벤트 리스너
 function treeActionListener() {
 	// group class에 클릭 이벤트 리스너 추가
 	$(".group").click(function(e){
-		var target = e.target;
-		var key = $(target).attr("key");
-		var title = $(target).children("div").text();
-		var dp = $(target).attr("depth");
-		dp = (dp * 1) + 1;
-		
+		var target = e.target; // 이벤트 발생시킨 요소 가져오기 위한 변수
+		var key = $(target).attr("key"); // bring in a key
+		var title = $(target).children("div").text(); // bring in a name
+		var dp = $(target).attr("depth"); // bring in a depth
+
+		dp = (dp * 1) + 1; // 1부터 시작하게 설정
+		var className = $(target).attr("class");
 		var isOpen = $(target).attr("isOpen");
-		// console.log('isOpen: ' + isOpen);
-		
 		var log = "";
+
 		log += "[title] " + title + "\n";
 		log += "[id] " + key + "\n";
 		log += "[dp] " + dp + "\n";
 		log += "[isOpen] " + isOpen + "\n";
-		console.log(log);
+		log += "[className] " + className + "\n";
+		// console.log(log);
+		if(className == 'user') {
+			userActionListener(className); // 사용자 이름 클릭이벤트 리스너 
+		}
 		
 		var ul = $("<ul>");
-		
-		if (isOpen == "true") {
-			$(target).attr("isOpen", "false");
-			$(target).children("ul").empty();
-
-			var imgSrc = './images/icon_tree_plus.png'; 
+		if (isOpen == "true") { // 폴더를 열었다가 닫는 경우
+			$(target).attr("isOpen", "false"); // switch값을 false로 변경
+			$(target).children("ul").empty();  // ul의 값을 비움
+			var imgSrc = './images/icon_tree_plus.png'; // +이미지 
 			
-			if (key == topCode) {
-				imgSrc = './images/icon_top_tree_up.png'; 
+			if (key == topCode) { // 최상위 폴더인 경우
+				imgSrc = './images/icon_top_tree_up.png'; // ↑이미지 표시
 			}
 			
-			$(target).children("div").children("img").attr("src", imgSrc);
-		} else {
-			$(target).attr("isOpen", "true");
+			$(target).children("div").children("img").attr("src", imgSrc); // +이미지로 변경
+		} else { // 하위폴더를 닫을 경우
+			$(target).attr("isOpen", "true"); // switch값을 true로 변경
 			
-			var imgSrc = './images/icon_tree_minus.png';
+			var imgSrc = './images/icon_tree_minus.png'; // -이미지
 			
-			if (key == topCode) {
+			if (key == topCode) { // 최상위 폴더인 경우
 				imgSrc = './images/icon_top_tree_down.png';
 			}
 			
-			$(target).children("div").children("img").attr("src", imgSrc);
+			$(target).children("div").children("img").attr("src", imgSrc); // +이미지로 변경
 			
-			var grpPl = 30 + (dp * 20);
-			var usrPl = grpPl - 20;
-			
+			var grpPl = 30 + (dp * 20); // group paddingLeft      
+			var usrPl = grpPl - 20; // user paddingLeft
+
 			for (var i = 0; i < org.length; i++) {
-				var grp = org[i];
-				var id = grp.id;
-				var high = grp.high;
-				var name = grp.name;
-				var type = grp.type;
-				
+				var grp = org[i];    // 배열의 값 저장
+				var id = grp.id;     // id store
+				var high = grp.high; // high store
+				var name = grp.name; // name store
+				var type = grp.type; // type store
+
 				if (key == high) {
-					//console.log("[treeActionListener] org: " + id + "/" + high + "/" + name + "/" + type);
-					
+					// console.log("[treeActionListener] org: " + "id: " + id + "/" + "high: " + high + "/" + "name: " + name + "/" + "type: " + type);
 					var tag = "<li class='@className@' key='@id@' high='@high@' depth='@dp@' isOpen='false'><div style='@style@'>@img@@title@</div></li>"
 					var img = "";
 					var className = type;
 					var imgSrc = "./images/icon_tree_plus.png";
-					var style = "padding-left: " + usrPl + "px";
+					var style = "padding-left:" + usrPl + "px";
 					
 					if (type == "group") {
 						img = "<img src='@imgSrc@' width='15' height='15'/>";
 						className = "group";
-						style = "padding-left: " + grpPl + "px";
-					}  
-					
+						style = "padding-left:" + grpPl + "px;" + "cursor: pointer;";
+					} 
+
 					tag = tag.replace("@className@", className)
 							.replace("@id@", id)
 							.replace("@high@", high)
@@ -158,12 +136,16 @@ function treeActionListener() {
 							.replace("@dp@", dp)
 							.replace("@style@", style)
 							.replace("@imgSrc@", imgSrc);
-					
 					ul.append(tag);
 				}
 			}
-			
 			$(target).append(ul);
 		}
 	});
+}	
+// 사용자 클릭 했을 경우 클릭 이벤트 리스너
+function userActionListener(classNm) {
+	var class = classNm;
+	
 }
+
