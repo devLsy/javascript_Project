@@ -83,44 +83,31 @@ function treeActionListener() {
 		if(className == 'user') { // 사용자 인 경우에만 이미지 표시
 			var imgPath = './images/Heroes/'; // 이미지 경로
 			var imgSrc = imgPath + key + '.jpg'; // full imgSrc
-			console.log('imgSrc: ' + imgSrc);
+			console.log('imgSrc: ' + imgSrc);	
 
 		switch(key) {
 			case 'stanleyMartinLieber': console.log('마블작가');
-				  var $img = $('<img>').attr('src', imgSrc); //중복코드 함수로 뺄 예정, 다음 사용자 클릭 시 이전 이미지 삭제 기능 추가 해야 함	
-				  $img.addClass('imgDiv');	
-				  $('.imgDiv').append($img);	
+				  showUserImage(imgSrc); // 클릭한 사용자에 해당되는 이미지 표시
 				  break;	
 			case 'doctorStrange': console.log('닥스');
-				  var $img = $('<img>').attr('src', imgSrc);	
-				  $img.addClass('imgDiv');	
-				  $('.imgDiv').append($img);
+				  showUserImage(imgSrc);	
 				  break;	
 			case 'thorOdinson': console.log('토르');
-			      var $img = $('<img>').attr('src', imgSrc);	
-				  $img.addClass('imgDiv');	
-				  $('.imgDiv').append($img);
+			      showUserImage(imgSrc);
 				  break;
 			case 'ironMan': console.log('아이언맨');
-			      var $img = $('<img>').attr('src', imgSrc);	
-				  $img.addClass('imgDiv');	
-				  $('.imgDiv').append($img); 
+			      showUserImage(imgSrc);
 				  break;	
 			case 'hulk': console.log('헐크');
-			      var $img = $('<img>').attr('src', imgSrc);	
-				  $img.addClass('imgDiv');	
-				  $('.imgDiv').append($img);
+			      showUserImage(imgSrc);
 				  break;
 			case 'captinAmerica': console.log('캡틴아메리카');
-			      var $img = $('<img>').attr('src', imgSrc);	
-				  $img.addClass('imgDiv');	
-				  $('.imgDiv').append($img);
+			      showUserImage(imgSrc);
 				  break;
 		    default:
 		    	  console.log('이미지가 없습니다.');
 		}
 	}
-		
 		var ul = $("<ul>");
 		if (isOpen == "true") { // 폴더를 열었다가 닫는 경우
 			$(target).attr("isOpen", "false"); // switch값을 false로 변경
@@ -182,3 +169,17 @@ function treeActionListener() {
 		}
 	});
 }	
+/*
+*
+* 클릭한 사용자에 해당하는 이미지 표시(Maximum call stack size exceeded 해결 필요)
+* @param imgSrc: full imgSrc	
+*/
+function showUserImage(imgSrc) {
+	if(imgSrc != null) {
+		var $img = $('<img>').attr('src', imgSrc); // parameter의 값으로 전달받은 이미지경로를 저장
+    	$img.addClass('imgDiv'); //사용자 이미지 css 적용
+		$('.imgDiv').append($img); // 이미지영역에 이미지 추가		
+	} else {
+		$img.removeClass();
+	}
+}

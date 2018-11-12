@@ -8,6 +8,7 @@
 #tree li.user {background: #E4F7BA}
 /*동적 liv div 영역*/
 #tree li div {height: 35px; border-bottom: 1px solid #000; line-height: 35px; font-weight: bold; padding-left: 30px; pointer-events: none;}
-/*이미지 영역*/
+/*트리 이미지 영역*/
 #tree img {position: absolute; margin-top: 9px; margin-left: -20px; pointer-events: none;}
-.imgDiv img {position: absolute; margin-top: -100px; cursor:pointer;}
+/*사용자 이미지 영역*/
+.imgDiv img {position: absolute; margin-top:-100px; cursor:pointer;}
