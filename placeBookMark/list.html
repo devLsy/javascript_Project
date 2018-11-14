@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Dev_BookMark</title>
+<head>
+
+<style type="text/css">
+a {text-decoration: none;}
+#hideBtn {width: 50px;}
+li {list-style:none;}
+</style>	
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+		console.log("page loaded");
+        
+        var dev = new Dev();
+        });
+
+// 클래스 생성
+function Dev() {
+	// 프로퍼티 생성
+	this.$hideBtn = null;
+
+	this.init();
+	this.initEvent();
+}
+
+// 요소 초기화
+Dev.prototype.init = function() {
+	this.$hideBtn = $("#hideBtn");
+}
+	
+// 이벤트 초기화	
+Dev.prototype.initEvent = function() {	
+	this.$hideBtn.click(function() {
+		if($("#hideBtn").val() == "hide") {
+			$(".ulArea").hide();
+			$("#hideBtn").val("show");	
+		} else {
+			$(".ulArea").show();
+			$("#hideBtn").val("hide");	
+		}
+	});
+}
+		
+</script>	
+</head>
+
+<body>
+<h1>일상 가볼만한 곳</h1>
+<div class="container">
+<input type="button" id="hideBtn" value="hide">
+<ul class="ulArea">
+<li><a href="http://mymythos.tistory.com/1015">청주 초정약수원탕(세계 3대 광천수, 피부병 치료 효과)</a><br></li>
+</ul>
+</div>
+
+</body>
+</html>
