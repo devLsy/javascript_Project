@@ -12,5 +12,9 @@
 #tree img {position: absolute; margin-top: 9px; margin-left: -20px; pointer-events: none;}
 /*사용자 이미지 영역*/
 .imgDiv img {position:absolute; margin-top:-100px;}
-/*x버튼 영역*/
-.xBtnImgDiv img {position:absolute; margin-left:230px; margin-top:-95px; width:15px; height:15px; cursor:pointer;}
+/*x버튼 영역 추가*/
+.xBtnImgDiv img.add{position:absolute; margin-left:230px; margin-top:-95px; width:15px; height:15px; cursor:pointer;}
+
+
+
+

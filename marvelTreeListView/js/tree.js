@@ -1,7 +1,8 @@
-// 전역 변수
+// 나중에 시간 내서 class & plugin으로 변경할 예정
+// 전역 변수 ////////////////
 var org = null;
 var topCode = "marvel";
-
+//////////////////////////// 
 $(document).ready(function(){
 	initTreeData(); // 트리데이터 초기화
 	initTree();		// 트리 초기화(동적으로 ul, li 태그 생성)
@@ -180,20 +181,27 @@ function showUserImage(imgSrc) {
 		var $xBtnImg = $("<img src='./images/xBtn.jpg' />") // x버튼 이미지 설정
     	
     	$img.addClass('imgDiv'); //사용자 이미지 css 적용
-    	$xBtnImg.addClass('xBtnImgDiv'); // x이미지 css 적용
+    	$xBtnImg.addClass('add'); // x이미지 css 적용
 		
 		$('.imgDiv').append($img); // 이미지영역에 이미지 추가		
 		$('.xBtnImgDiv').append($xBtnImg); // 이미지영역에 x이미지 추가
 		
+		closeUserImage($xBtnImg); // x버튼 클릭 관련 함수 
+
 	} else {
-		$img.removeClass();	
-		$xBtnImg.removeClass();
+		$img.remove();		
+		$xBtnImg.remove();
 	}	
 }
-/*
+/*	
 * x버튼 클릭 시 이미지 닫기
 * @param img: 클릭한 이미지
 */
-function closeImage($xmg) {
-
+function closeUserImage($xBtnImg) {
+	var $xBtn = $xBtnImg;
+	$xBtn.click(function(e) {
+		console.log('x버튼 클릭함!!');
+		$('.xBtnImgDiv').remove();
+		$('.imgDiv').remove();
+	});
 }
