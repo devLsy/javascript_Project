@@ -177,9 +177,23 @@ function treeActionListener() {
 function showUserImage(imgSrc) {
 	if(imgSrc != null) {
 		var $img = $('<img>').attr('src', imgSrc); // parameter의 값으로 전달받은 이미지경로를 저장
+		var $xBtnImg = $("<img src='./images/xBtn.jpg' />") // x버튼 이미지 설정
+    	
     	$img.addClass('imgDiv'); //사용자 이미지 css 적용
+    	$xBtnImg.addClass('xBtnImgDiv'); // x이미지 css 적용
+		
 		$('.imgDiv').append($img); // 이미지영역에 이미지 추가		
+		$('.xBtnImgDiv').append($xBtnImg); // 이미지영역에 x이미지 추가
+		
 	} else {
-		$img.removeClass();
-	}
+		$img.removeClass();	
+		$xBtnImg.removeClass();
+	}	
+}
+/*
+* x버튼 클릭 시 이미지 닫기
+* @param img: 클릭한 이미지
+*/
+function closeImage($xmg) {
+
 }
