@@ -187,11 +187,12 @@ function showUserImage(imgSrc) {
 		$('.xBtnImgDiv').append($xBtnImg); // 이미지영역에 x이미지 추가
 		
 		closeUserImage($xBtnImg); // x버튼 클릭 관련 함수 
-
 	} else {
-		$img.remove();		
+		$img.remove();
 		$xBtnImg.remove();
-	}	
+	}
+	$('.xBtnImgDiv').show();
+	$('.imgDiv').show();
 }
 /*	
 * x버튼 클릭 시 이미지 닫기
@@ -199,9 +200,12 @@ function showUserImage(imgSrc) {
 */
 function closeUserImage($xBtnImg) {
 	var $xBtn = $xBtnImg;
-	$xBtn.click(function(e) {
+
+	if($xBtn != null) {
+		$xBtn.click(function(e) {
 		console.log('x버튼 클릭함!!');
-		$('.xBtnImgDiv').remove();
-		$('.imgDiv').remove();
-	});
+		$('.xBtnImgDiv').hide();
+		$('.imgDiv').hide();
+	  });		
+	} 
 }
