@@ -1,8 +1,6 @@
-// 나중에 시간 내서 class & plugin으로 변경할 예정
-// 전역 변수 ////////////////
 var org = null;
 var topCode = "marvel";
-//////////////////////////// 
+
 $(document).ready(function(){
 	initTreeData(); // 트리데이터 초기화
 	initTree();		// 트리 초기화(동적으로 ul, li 태그 생성)
@@ -63,7 +61,7 @@ function initTree() {
 }
 // 트리 클릭 이벤트 리스너
 function treeActionListener() {
-	// group class에 클릭 이벤트 리스너 추가
+	// group class에 클릭 이벤트 리스너 추가	
 	$(".group").click(function(e){
 		var target = e.target; // 이벤트 발생시킨 요소 가져오기 위한 변수
 		var key = $(target).attr("key"); // bring in a key
@@ -84,30 +82,9 @@ function treeActionListener() {
 		if(className == 'user') { // 사용자 인 경우에만 이미지 표시
 			var imgPath = './images/Heroes/'; // 이미지 경로
 			var imgSrc = imgPath + key + '.jpg'; // full imgSrc
-			console.log('imgSrc: ' + imgSrc);	
+			// console.log('imgSrc: ' + imgSrc);	
 
-		switch(key) {
-			case 'stanleyMartinLieber': console.log('마블작가');
-				  showUserImage(imgSrc); // 클릭한 사용자에 해당되는 이미지 표시
-				  break;	
-			case 'doctorStrange': console.log('닥스');
-				  showUserImage(imgSrc);	
-				  break;	
-			case 'thorOdinson': console.log('토르');
-			      showUserImage(imgSrc);
-				  break;
-			case 'ironMan': console.log('아이언맨');
-			      showUserImage(imgSrc);
-				  break;	
-			case 'hulk': console.log('헐크');
-			      showUserImage(imgSrc);
-				  break;
-			case 'captinAmerica': console.log('캡틴아메리카');
-			      showUserImage(imgSrc);
-				  break;
-		    default:
-		    	  console.log('이미지가 없습니다.');
-		}
+			showUserImage(imgSrc); // 사용자 이름에 해당하는 이미지 표시
 	}
 		var ul = $("<ul>");
 		if (isOpen == "true") { // 폴더를 열었다가 닫는 경우
@@ -176,29 +153,21 @@ function treeActionListener() {
 * @param imgSrc: full imgSrc	
 */
 function showUserImage(imgSrc) {
-	if(imgSrc != null) {
-		var $img = $('<img>').attr('src', imgSrc); // parameter의 값으로 전달받은 이미지경로를 저장
-		var $xBtnImg = $("<img src='./images/xBtn.jpg' />") // x버튼 이미지 설정
-    	
-    	$img.addClass('imgDiv'); //사용자 이미지 css 적용
-    	$xBtnImg.addClass('add'); // x이미지 css 적용
-		
-		$('.imgDiv').append($img); // 이미지영역에 이미지 추가		
-		$('.xBtnImgDiv').append($xBtnImg); // 이미지영역에 x이미지 추가
-		
-		closeUserImage($xBtnImg); // x버튼 클릭 관련 함수 
-	} else {
-		$img.remove();
-		$xBtnImg.remove();
-	}
-	$('.xBtnImgDiv').show();
-	$('.imgDiv').show();
+	var $imgArea = $('.imgArea');
+	var $xImgArea = $('.xBtnImgArea');
+
+	var $xImg = $("<img src='./images/xBtn.jpg' />");
+	$imgArea.addClass('imgCl');	
+	$imgArea.attr('src', imgSrc);
+
+	$xImgArea.addClass('xBtnCl');	
+	// $xImgArea.attr('src', $xImg);
 }
 /*	
 * x버튼 클릭 시 이미지 닫기
 * @param img: 클릭한 이미지
 */
-function closeUserImage($xBtnImg) {
+function closeUserImage($xBtnImg) {	
 	var $xBtn = $xBtnImg;
 
 	if($xBtn != null) {
