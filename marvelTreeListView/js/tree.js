@@ -159,10 +159,10 @@ function showUserImage(imgSrc) {
 
 }
 /*	
-* x버튼 클릭 시 이미지 닫기
-* @param img: 클릭한 이미지
+* 그룹목록 닫을 경우 사용자 이미지 숨김
+* 
 */
-function closeUserImage() {	
+function hideUserImage() {	
 	
 }
 
