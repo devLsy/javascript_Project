@@ -178,3 +178,5 @@ function closeUserImage($xBtnImg) {
 	  });		
 	} 
 }
+
+// 2018-11-18 Git Test
