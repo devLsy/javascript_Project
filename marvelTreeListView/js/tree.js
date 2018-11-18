@@ -154,29 +154,16 @@ function treeActionListener() {
 */
 function showUserImage(imgSrc) {
 	var $imgArea = $('.imgArea');
-	var $xImgArea = $('.xBtnImgArea');
-
-	var $xImg = $("<img src='./images/xBtn.jpg' />");
 	$imgArea.addClass('imgCl');	
 	$imgArea.attr('src', imgSrc);
 
-	$xImgArea.addClass('xBtnCl');	
-	// $xImgArea.attr('src', $xImg);
 }
 /*	
 * x버튼 클릭 시 이미지 닫기
 * @param img: 클릭한 이미지
 */
-function closeUserImage($xBtnImg) {	
-	var $xBtn = $xBtnImg;
-
-	if($xBtn != null) {
-		$xBtn.click(function(e) {
-		console.log('x버튼 클릭함!!');
-		$('.xBtnImgDiv').hide();
-		$('.imgDiv').hide();
-	  });		
-	} 
+function closeUserImage() {	
+	
 }
 
 // 2018-11-18 Git Test
