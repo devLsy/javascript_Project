@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="./css/style.css">	
+<title>Calendar</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="./js/calendar.js"></script>
+</head>
+<body>
+	<div class='container'>기준일자: <input type='text' class='stDt' placeholder="날짜를 입력해주세요.">&nbsp;(형식: 0000-00-00) <input type='button' value='날짜계산'></div><br>
+		<hr>
+		<p>기준일 첫째날: <span id='r1'></span></p>
+		<p>기준월 말일: <span id='r2'></span></p>
+		<p>이전달 첫째날: <span id='r3'></span></p>
+		<p>이전달 말일: <span id='r4'></span></p>
+		<p>다음달 첫째날: <span id='r5'></span></p>
+		<p>다음달 말일: <span id='r6'></span></p><br>
+		<input type='text'> 달 후 첫째날 <input type='button' value='계산'><br>
+		<span id=''></span>
+		<input type='text'> 달 후 말일 <input type='button' value='계산'><br>
+		<span id=''></span>
+		<input type='text'> 일 전 일자 <input type='button' value='계산'><br>
+		<span id=''></span>
+		<input type='text'> 일 후 일자 <input type='button' value='계산'><br>
+		<span id=''></span>
+</body>	
+</html>
