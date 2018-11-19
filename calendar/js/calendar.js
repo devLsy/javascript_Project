@@ -4,10 +4,21 @@
 
 $(document).ready(function() {
   var dt = new Date();
+  var $calc = $(".calc");
+  var $reset = $(".reset");
+
+  $calc.click(function() {
+  	calcDate();
+  });
+
+  $reset.click(function() {
+  	clearInput();
+  }); 
+
 });
 
 function calcDate() { // 날짜 계산
-  var inputVal = $("#stDt").val(); 
+  var inputVal = $(".stDt").val(); 
   console.log('사용자 입력값: ' + inputVal); 
 
   $("#r1").text(getDt1(inputVal));  // 기준월 첫째날
@@ -48,12 +59,16 @@ function getDt6(dt) { // 다음달 말일
 }
 
 function converDateString(dt) {
-	return dt.getFullYear() + "-" + addZero(eval(dt.getMonth()+1)) + "-" + addZero(dt.getDate());				
-
+	console.log('날짜: ' + dt.getFullYear() + "-" + addZero(eval(dt.getMonth()+1)) + "-" + addZero(dt.getDate()));
+	return dt.getFullYear() + "-" + addZero(eval(dt.getMonth()+1)) + "-" + addZero(dt.getDate());			
 }
 
 function addZero(i) { // 앞자리에 0추가
   var rtn = i + 100;
-  // console.log('rtn: ' + rtn);
   return rtn.toString().substring(1,3);
 }
+
+function clearInput() { // 입력 영역 초기화
+  // console.log('reset');
+  $(".stDt").val("");
+}		
