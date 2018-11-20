@@ -181,7 +181,7 @@ function converDateString(dt) {
     return dt.getFullYear() + "-" + addZero(eval(dt.getMonth() + 1)) + "-" + addZero(dt.getDate())
 };
 /*
-* 날짜 앞자리에 0추가 (ex: 2018-1-1 -> 2018-01-01)
+* 월, 일 앞자리에 0추가 (ex: 2018-1-1 -> 2018-01-01)
 * @param i: 입력받은 데이터 중 월, 일 값
 */
 function addZero(i) {
