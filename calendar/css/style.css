@@ -1,10 +1,9 @@
 /*밑줄*/
 hr {border:1px solid #E4F7BA; width: 100%; size:20px;} 
 /*inputbox 영역*/
-input.stDt {width:150px; font-size:15px;}
+input.stDt {width:90px; font-size:16px; text-align:center;}
 /*title 영역*/
 h4.title {font-size:25px; margin-top:0px;}
 div.container {margin-top:-15px;}
-/*placeholder영역 크롬 4~56*/
-::-webkit-input-placeholder {color: blue;}
+
 
