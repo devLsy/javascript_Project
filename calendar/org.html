@@ -82,10 +82,10 @@ var newDt = new Date(s);
 newDt.setDate( newDt.getDate() + i );
 return converDateString(newDt);
 }
-window.onload = function(){
+/*window.onload = function(){
 var dt = new Date();
-// document.getElementById('stDt').value = converDateString(dt);
-}
+document.getElementById('stDt').value = converDateString(dt);
+}*/
 
 function converDateString(dt){
 return dt.getFullYear() + "-" + addZero(eval(dt.getMonth()+1)) + "-" + addZero(dt.getDate());
