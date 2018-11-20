@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>simpleLotto</title>
+	<!-- css -->
+	<style>
+	.makedArea {
+			width: 500px;
+			background-color:#EDFFE7;
+			border:1px #eeeeee solid;
+			margin:20px;
+		}
+	#make, #autoMake {
+			background-color:#DBFFD5;
+			width: 120px;
+			height: 50px;
+		}
+
+	#stop {
+			background-color:#FFCBCB;
+			width: 120px;
+			height: 50px;
+	}
+
+	#clear {
+			background-color:#EAEAEA;
+			width: 120px;
+			height: 50px;
+	}
+	</style>		
+	<!-- css end -->	
+
+	<!-- js -->
+	<script type="text/javascript" src=" http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" >
+	</script>
+	<script type="text/javascript" src="./js/lotto.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {	
+			// 인스턴스 생성
+			var lotto = new Lotto();
+		});	
+	</script>
+	<!-- js end -->	
+
+</head>
+<body>
+	<h1 class="title">Simple Lotto Maker</h1>
+	<h3 class="comment">금주의 로또 당첨번호를 예상 해봅시다.</h3>
+	<div class="btnArea">
+		<button type="button" id="make">수동 번호 생성</button>
+		<button type="button" id="autoMake">자동 번호 생성</button>
+		<button type="button" id="stop">타이머 중단</button>
+		<button type="button" id="clear">초기화</button>
+	</div>
+	<div class="makedArea">
+	<!-- 로또 번호 동적 생성 영역 -->
+	</div>
+</body>
+</html>
