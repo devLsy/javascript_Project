@@ -37,25 +37,25 @@ function init() {
 };
 // 이벤트 초기화(클릭 이벤트)
 function initEvent() {
-    $calc1.click(function() { // 화면 윗부분 연산
+    $calc1.click(function() { // 화면 윗부분 연산(기준일 기준 - 첫째날 ~ etc..)
         calc1Date()
     });
-    $calc2.click(function() { // 화면 아랫부분 연산
+    $calc2.click(function() { // 화면 아랫부분 연산(~달 후의 첫째날)
         calc2Date()
     });
-    $calc3.click(function() {
+    $calc3.click(function() { // 화면 아랫부분 연산(~달 후의 말일)
         calc3Date()
     });
-    $calc4.click(function() {
+    $calc4.click(function() { // 화면 아랫부분 연산(~일 전 일자)
         calc4Date()
     });
-    $calc5.click(function() {
+    $calc5.click(function() { // 화면 아랫부분 연산(~일 후 일자)
         calc5Date()
     });
-    $nowDate.click(function() {
+    $nowDate.click(function() { // 현재시간 가져와서 표시
         getNowDate()
     });
-    $reset.click(function() {
+    $reset.click(function() { // all I/O Area clear
         clearInput();
         $(".stDt").focus()
     })
@@ -114,7 +114,7 @@ function getNowDateLastDate(dt) {
 };
 // 기준일 기준 이전달의 첫째날
 function prevMonthFirstDate(dt) {
-    var newDt = new Date(dt);
+    var newDt = new Date(dt);   
     newDt.setMonth(newDt.getMonth() - 1);
     newDt.setDate(1);
     return converDateString(newDt)
@@ -178,7 +178,7 @@ function addZero(i) {
     var rtn = i + 100;
     return rtn.toString().substring(1, 3)
 };
-// all I/O Area initialization
+// all I/O Area clear
 function clearInput() {
     $(".stDt").val("");
     $("#r1").html("");
