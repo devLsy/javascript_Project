@@ -1,5 +1,5 @@
 /*밑줄*/
-hr {border:1px solid #E4F7BA; width: 100%; size:20px;} 
+hr {border:1px solid #E4F7BA; width:70%; size:20px; margin-left:0px} 
 /*inputbox 영역*/
 input.stDt {width:90px; font-size:16px; text-align:center;}
 /*title 영역*/
