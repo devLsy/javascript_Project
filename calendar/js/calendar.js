@@ -1,3 +1,13 @@
+/*
+*2018-11-20 급하게 만든 날짜계산 프로그램인데..시간 날때 확장성 있게 
+*수정해서 쓸만 한 프로그램으로 만들면 좋을 듯
+*참조 블로그: http://findfun.tistory.com/395?category=518431
+*/
+
+/*
+* author: devLsy
+*
+*/
 var $calc1 = null;   // 화면 윗부분 날짜계산 버튼 
 var $nowDate = null; // 화면 윗부분 현재시간 버튼
 
@@ -180,7 +190,7 @@ function addZero(i) {
 };
 // all I/O Area clear
 function clearInput() {
-    $(".stDt").val("");
-    $("#r1, #r2, #r3, #r4, #r5, #r6, #r7, #r8, #r9, #r10, #r11").html("");
-    $(".il1, .il2, .il3, .il4").val("");
+    $(".stDt").val(""); // 기준일자 inputbox clear
+    $("#r1, #r2, #r3, #r4, #r5, #r6, #r7, #r8, #r9, #r10, #r11").html(""); // 날짜 출력영역 clear
+    $(".il1, .il2, .il3, .il4").val(""); // 기준일에 +a 입력하는 영역 clear
 };
