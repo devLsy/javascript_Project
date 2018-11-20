@@ -11,6 +11,6 @@
 /*트리 이미지 영역*/
 #tree img {position: absolute; margin-top: 9px; margin-left: -20px; pointer-events: none;}
 /*사용자 이미지 영역*/
-.imgCl{position:relative; margin-top:-100px; border-radius:150px}
+.imgCl{position:absolute; margin-top:-100px; border-radius:150px}
 /*x버튼 영역 추가*/
 .xBtnCl{position:absolute; margin-left:230px; margin-top:-95px; width:15px; height:15px; cursor:pointer;}
