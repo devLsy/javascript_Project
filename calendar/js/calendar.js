@@ -181,19 +181,6 @@ function addZero(i) {
 // all I/O Area clear
 function clearInput() {
     $(".stDt").val("");
-    $("#r1").html("");
-    $("#r2").html("");
-    $("#r3").html("");
-    $("#r4").html("");
-    $("#r5").html("");
-    $("#r6").html("");
-    $(".il1").val("");
-    $(".il2").val("");
-    $(".il3").val("");
-    $(".il4").val("");
-    $("#r7").html("");
-    $("#r8").html("");
-    $("#r9").html("");
-    $("#r10").html("");
-    $("#r11").html("")
+    $("#r1, #r2, #r3, #r4, #r5, #r6, #r7, #r8, #r9, #r10, #r11").html("");
+    $(".il1, .il2, .il3, .il4").val("");
 };
