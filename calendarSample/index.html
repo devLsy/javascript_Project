@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />
+    <title>간단한 달력 샘플</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./js/calendar.js"></script>
+</head>
+<body>
+	<h1>간단한 달력 샘플</h1>
+	<div class='calendar'>
+		<div id="tityear">
+			<ul>
+				<li style="list-style:none; float:left;"><p><a id="leftday" style="cursor:pointer;">◀◀</a></p></li>
+				<li style="list-style:none; float:left; margin-left:10px; margin-right:10px;"><p id="titm" style="text-align:center;"></p></li>
+				<li style="list-style:none; float:left; margin-right:-100px;"><p><a id="rightday" style="cursor:pointer;">▶▶</a></p>
+				</li>
+			</ul>
+		</div>
+		<div id="MouthNote" style="width:200px;">
+			<table id="" style="text-align:center;">
+				<colgroup>
+					<col width="10%"/>						
+					<col width="10%"/>						
+					<col width="10%"/>						
+					<col width="10%"/>						
+					<col width="10%"/>						
+					<col width="10%"/>						
+					<col width="10%"/>						
+					<col width="10%"/>						
+				</colgroup>
+				<thead>
+					<tr>
+						<th>일</th>						
+						<th>월</th>						
+						<th>화</th>						
+						<th>수</th>						
+						<th>목</th>						
+						<th>금</th>						
+						<th>토</th>						
+					</tr>
+				</thead>
+
+				<tbody>
+				</tbody>
+			</table>
+	</div>
+</body>
+</html>
