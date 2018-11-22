@@ -22,6 +22,7 @@ function initMap() { // 지도 생성
         link: "http://www.openstreetmap.org/copyright"      
     }]
   });
+  console.log('osm map 생성 성공');
   // 맵타입 설정
   map.mapTypes.set('osm', openStreetMapType);
   map.setMapTypeId('osm');
