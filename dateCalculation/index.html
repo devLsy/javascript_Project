@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="devLsy">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="./css/style.css">	
+<title>Calendar</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="./js/calendar.min.js"></script>
+<!-- <script src="./js/calendar.min.js"></script> -->
+</head>
+<body>	
+	<h4 class='title'>simpleDate calculation</h4>
+	<div class='container'>기준일자: <input type='text' class='stDt' placeholder="날짜 입력">&nbsp;(형식: 0000-00-00) 
+		<input type='button' class='calc1' value='날짜계산'>
+		<input type='button' class='nowDate' value='현재시간'>
+		<input type='button' class='reset' value='초기화'>
+	</div>
+		<p>기준월 첫째날: <span id='r1'></span></p>
+		<p>기준월 말일: <span id='r2'></span></p>
+		<p>이전달 첫째날: <span id='r3'></span></p>
+		<p>이전달 말일: <span id='r4'></span></p>
+		<p>다음달 첫째날: <span id='r5'></span></p>
+		<p>다음달 말일: <span id='r6'></span></p>
+		<hr><p><p>
+		<input type='text' class='il1'> 달 후 첫째날 <input type='button' class='calc2' value='계산'>
+		<span id='r7'></span><br>
+		<input type='text' class='il2'> 달 후 말일 <input type='button' class='calc3' value='계산'>
+		<span id='r8'></span><br>
+		<input type='text' class='il3'> 일 전 일자 <input type='button' class='calc4' value='계산'>
+		<span id='r9'></span><br>
+		<input type='text' class='il4'> 일 후 일자 <input type='button' class='calc5' value='계산'>
+		<span id='r10'></span><br>
+</body>	
+</html>
