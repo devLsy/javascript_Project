@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 	initData();
 	initFolder();
@@ -34,28 +32,50 @@ function initFolder() {
 	for(var i = 0; i < marvelArr.length; i++) {
 		var newMarvelObj = marvelArr[i];
 		var id = newMarvelObj.id;
-		$tf.data("id", id);
 		var depth = newMarvelObj.depth;
-		$tf.data("depth", depth);
 		var type = newMarvelObj.type;
-		$tf.data("type", type);
 		var name = newMarvelObj.name;
-		$tf.data("name", name);
 		// console.log(newMarvelObj);
 
 		if(depth == '0') {
-			var liTg = "<li class=" + type + " id=" + id + " depth=" + depth + ">" + "<div>▶@img@ " + name + "</div></li>";
-			var img = null;
+			var liTg = "<li";
+			liTg += " class=" + type;
+			liTg += " id=" + id;
+			console.log(liTg);
+			var img = "";
 
 			if(type == "group") {
 				img = '<img src="./images/closeFolder.jpg" class="closeFolder">';
 			}
 
-			liTg = liTg.replace("@img@", img);
+			// liTg = $liTg.replace("@img@", img);
 			// console.log(liTg);
 			$ul.append(liTg);
 			// console.log($ul);
 		}
 	}
-	$("#topLevelFolder").append($ul);
+	$tf.append($ul);
+}
+// group에 ClickEventListener 추가
+function folderEventListener() {
+	var $group = $('li.group');
+		$group.click(function(e) {
+		var log = "[==========log==========]" + "\n";
+		var trg = e.target;
+
+		var id = $(trg).attr("id");
+		var dp = $(trg).attr("depth");
+		var type = $(trg).attr("class");
+		var name = $(trg).attr("value");
+		var openStatus = $(trg).attr("openStatus");
+
+		log += "[id]: " + id + "\n";
+		log += "[dp]: " + dp + "\n";
+		log += "[type]: " + type + "\n";
+		log += "[name]: " + name + "\n";
+		log += "[openStatus]: " + openStatus + "\n";
+		log += "[==========end of log==========]";
+		// console.log(name);
+		console.log(log);
+	});
 }
