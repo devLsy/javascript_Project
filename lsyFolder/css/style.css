@@ -4,8 +4,8 @@
 /*ul 영역 padding값을 넣지 않으면..li앞에 ul영역이 떡하니 차지하고 있는다ㅡ.ㅡ;; 이것때문에 엄청 고생*/
 #topLevelFolder ul {list-style:none; margin:0; padding:0;}
 /*li의 content 영역*/
-#topLevelFolder li div {border-bottom:1px solid #000; height:35px; padding-left:5px; font-weight:bold;}
+#topLevelFolder li {border-bottom:1px solid #000; height:35px; padding-left:5px;}
 /*그룹 폴더*/
-#topLevelFolder li.group {background:#D5D5D5; cursor:pointer; font-size:25px; font-family:"맑은고딕";}
+#topLevelFolder li.group {background:#D5D5D5; cursor:pointer; font-size:25px; font-weight:bold; font-family:"맑은고딕";}
 /*닫힌폴더 이미지*/
 img.closeFolder {width:20px; height:20px; margin-top:7px};

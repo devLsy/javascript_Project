@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	initData();
 	initFolder();
+	folderEventListener();
 });
 // 그룹 & 사용자 데이터 초기화
 function initData() {
@@ -37,19 +38,17 @@ function initFolder() {
 		var name = newMarvelObj.name;
 		// console.log(newMarvelObj);
 
-		if(depth == '0') {
+		if(depth == '0' && type == "group") {
 			var liTg = "<li";
-			liTg += " class=" + type;
-			liTg += " id=" + id;
-			console.log(liTg);
 			var img = "";
-
-			if(type == "group") {
-				img = '<img src="./images/closeFolder.jpg" class="closeFolder">';
-			}
-
-			// liTg = $liTg.replace("@img@", img);
+			img = '<img src="./images/closeFolder.jpg" class="closeFolder">';
+			liTg += " id=" + id;
+			liTg += " class=" + type;
+			liTg += " name=" + name;
+			liTg += " openStatus=" + "false";
+			liTg += " depth=" + depth + ">▶" + img + name + "</li>";
 			// console.log(liTg);
+			// liTg = $liTg.replace("@img@", img);
 			$ul.append(liTg);
 			// console.log($ul);
 		}
@@ -66,7 +65,7 @@ function folderEventListener() {
 		var id = $(trg).attr("id");
 		var dp = $(trg).attr("depth");
 		var type = $(trg).attr("class");
-		var name = $(trg).attr("value");
+		var name = $(trg).attr("name");
 		var openStatus = $(trg).attr("openStatus");
 
 		log += "[id]: " + id + "\n";
