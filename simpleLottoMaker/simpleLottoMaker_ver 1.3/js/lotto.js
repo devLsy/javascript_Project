@@ -60,7 +60,7 @@
 			this.$banners = $("#banner1 img");	// 이미지를 감싸고 있는 div id 노드
 			this.$bannerLength = this.$banners.length;	// 이미지 갯수
 			this.$time = $(".time");	// 실시간 시계 표시할 노드
-		}
+		}	
 
 		// 배너 위치 초기화
 		Lotto.prototype.initBannerPos = function() {
