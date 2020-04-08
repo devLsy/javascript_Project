@@ -222,12 +222,12 @@
 
 		// 번호 영역, 출력 영역 초기화
 		Lotto.prototype.resetLottoArea = function() {
-			alert("Initialize the number.");
+			//alert("Initialize the number.");
 			this.$comment.html("Please draw the lottoNumber of this week.");
 			this.$makedArea.html("");
 			$("#input").val("");
 		}
-
+					
 		// 타이머 중지
 		Lotto.prototype.stopImage = function() {
 			clearInterval(this.timerID);

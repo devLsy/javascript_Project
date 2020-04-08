@@ -1,0 +1,707 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pa",
+				"paragrapth\tabc"
+			],
+			[
+				"s",
+				"slide\tabc"
+			],
+			[
+				"title_s",
+				"title_slide_layout\tabc"
+			],
+			[
+				"my",
+				"myObject\tabc"
+			],
+			[
+				"ge",
+				"getX\tabc"
+			],
+			[
+				"sq",
+				"sqrNum\tabc"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"input",
+				"inputStr\tabc"
+			],
+			[
+				"prom",
+				"prompt\tabc"
+			],
+			[
+				"ma",
+				"marvel\tabc"
+			],
+			[
+				"type",
+				"type\t(index.html)"
+			],
+			[
+				"full",
+				"fullId\tabc"
+			],
+			[
+				"t",
+				"txt2\tabc"
+			],
+			[
+				"txt",
+				"txt2\tabc"
+			],
+			[
+				"depl",
+				"deployment-scanner"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"p",
+				"print"
+			],
+			[
+				"n",
+				"num2"
+			],
+			[
+				"sl",
+				"slack_token"
+			],
+			[
+				"slack",
+				"slack_message"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"ov",
+				"overflow\tproperty"
+			],
+			[
+				"min",
+				"min-height\tproperty"
+			],
+			[
+				"text-a",
+				"text-align\tproperty"
+			],
+			[
+				"li",
+				"list-style\tproperty"
+			],
+			[
+				"in",
+				"inline-block\tdisplay"
+			],
+			[
+				"text-de",
+				"text-decoration-style\tproperty"
+			],
+			[
+				"bd",
+				"bd+\tborder: ${1:1px} ${2:solid} ${3:#000};"
+			],
+			[
+				"border-bo",
+				"border-bottom\tproperty"
+			],
+			[
+				"met",
+				"meta\tTag"
+			],
+			[
+				"bor",
+				"border\tproperty"
+			],
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"fol",
+				"float\tproperty"
+			],
+			[
+				"margin",
+				"margin\tproperty"
+			],
+			[
+				"a",
+				"accent"
+			],
+			[
+				"fo",
+				"font-weight\tproperty"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"an",
+				"answer"
+			],
+			[
+				"pe",
+				"placeholder\tAttr"
+			],
+			[
+				"back",
+				"background\tproperty"
+			],
+			[
+				"ba",
+				"background-repeat\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"timer",
+				"timeGrid"
+			],
+			[
+				"e",
+				"expire"
+			],
+			[
+				"dis",
+				"display\tproperty"
+			],
+			[
+				"iansystem",
+				"iansystem13"
+			],
+			[
+				"box",
+				"box-sizing\tproperty"
+			],
+			[
+				"table",
+				"table-row\tdisplay"
+			],
+			[
+				"cle",
+				"clear\tproperty"
+			],
+			[
+				"ta",
+				"table\tdisplay"
+			],
+			[
+				"ri",
+				"right\tfloat"
+			],
+			[
+				"fl",
+				"float\tproperty"
+			],
+			[
+				"he",
+				"height\tproperty"
+			],
+			[
+				"bu",
+				"button"
+			],
+			[
+				"tex",
+				"textarea"
+			],
+			[
+				"bo",
+				"both\tclear"
+			],
+			[
+				"padd",
+				"padding\tproperty"
+			],
+			[
+				"margin-bo",
+				"margin-bottom\tproperty"
+			],
+			[
+				"mari",
+				"margin\tproperty"
+			],
+			[
+				"te",
+				"text-align\tproperty"
+			],
+			[
+				"le",
+				"left\tfloat"
+			],
+			[
+				"flo",
+				"float\tproperty"
+			],
+			[
+				"list",
+				"list-style\tproperty"
+			],
+			[
+				"de",
+				"text-decoration-style\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"res",
+				"reset"
+			],
+			[
+				"op",
+				"option\tTag"
+			],
+			[
+				"list-",
+				"list-style-position\tproperty"
+			],
+			[
+				"ce",
+				"circle\tlist-style-type"
+			],
+			[
+				"row",
+				"rowspan\tAttr"
+			],
+			[
+				"bore",
+				"border\tproperty"
+			],
+			[
+				"img",
+				"images"
+			],
+			[
+				"header",
+				"headerSlogan"
+			],
+			[
+				"talb",
+				"table-cell\tdisplay"
+			],
+			[
+				"tabl",
+				"table-cell\tdisplay"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"border-botto",
+				"border-bottom-right-radius\tproperty"
+			],
+			[
+				"thi",
+				"thin\tborder-width"
+			],
+			[
+				"reap",
+				"repeat-x\tbackground-repeat"
+			],
+			[
+				"clo",
+				"color\tproperty"
+			],
+			[
+				"i",
+				"italic\tfont-style"
+			],
+			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"lo",
+				"lounge"
+			],
+			[
+				"border",
+				"border-bottom\tproperty"
+			],
+			[
+				"cha",
+				"charset\tAttr"
+			],
+			[
+				"cal",
+				"calcuBtn"
+			],
+			[
+				"hei",
+				"height\tproperty"
+			],
+			[
+				"cu",
+				"cursor\tproperty"
+			],
+			[
+				"col",
+				"color\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"anaconda",
+				"BracketHighlighter: Select Tag Name (closing and opening)"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove package",
+				"Package Control: Remove Package"
+			],
+			[
+				"SFTP",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"SideBar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 171.0,
+		"history":
+		[
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/devLsy_noteBook/Desktop/job/공공SI/제안서_tips/오탈자 체크 파이썬/textGetToPPT.py",
+		"/C/eGovFrameDev-3.8.0-64bit/workspace/.metadata/.log",
+		"/C/Users/devLsy_noteBook/Desktop/textGetToPPT.py",
+		"/C/Users/devLsy_noteBook/Desktop/1.html",
+		"/C/Users/devLsy_noteBook/Desktop/lsy/dev/downLoad/from동경이/포트폴리오(수정)/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/lsy/dev/downLoad/from동경이/포트폴리오(수정)/node_modules/jquery/src/ajax/xhr.js",
+		"/C/Users/devLsy_noteBook/Desktop/lsy/dev/downLoad/from동경이/포트폴리오(수정)/node_modules/jquery/package.json",
+		"/C/Users/devLsy_noteBook/Desktop/lsy/dev/downLoad/from동경이/포트폴리오(수정)/js/bootstrap.js",
+		"/C/Users/devLsy_noteBook/Desktop/lsy/dev/downLoad/from동경이/포트폴리오(수정)/js/npm.js",
+		"/C/Users/devLsy_noteBook/Desktop/lsy/dev/downLoad/from동경이/포트폴리오(수정)/js/script.js",
+		"/E/001_dev/devToolConfig/backup/sts/STS.ini",
+		"/E/001_dev/workspace/ex06_2/src/main/webapp/resources/js/reply.js",
+		"/E/001_dev/workspace/yaga/pom.xml",
+		"/E/001_dev/devToolConfig/backup/sts/ini/STS.ini",
+		"/E/001_dev/workspace/ex05/src/main/java/org/zerock/controller/ReplyController.java",
+		"/E/001_dev/workspace/ex05/src/main/webapp/WEB-INF/views/board/get.jsp",
+		"/E/001_dev/workspace/ex06_2/src/main/webapp/WEB-INF/views/board/get.jsp",
+		"/E/001_dev/workspace/ex06_2/src/main/webapp/WEB-INF/views/board/list.jsp",
+		"/C/Users/devLsy_noteBook/Desktop/download/html_template/corlate/index.html",
+		"/C/STS-3.9.10.RELEASE-e4.13.0-win32-x86_64/sts-bundle/sts-3.9.10.RELEASE/STS.ini",
+		"/C/Users/devLsy_noteBook/Desktop/temp_source/html/191118.html",
+		"/E/001_dev/container/apache-tomcat-9.0.27-windows-x64/apache-tomcat-9.0.27/bin/catalina.bat",
+		"/E/001_dev/gitProject/mpva_job_new_front/1.html",
+		"/E/001_dev/gitProject/mpva_job_new_front/README.md",
+		"/C/STS-3.9.10.RELEASE-e4.13.0-win32-x86_64/sts-bundle/sts-3.9.10.RELEASE/hs_err_pid10336.log",
+		"/C/STS-3.9.10.RELEASE-e4.13.0-win32-x86_64/sts-bundle/sts-3.9.10.RELEASE/hs_err_pid8672.log",
+		"/E/001_dev/workspace/yaga/sql/ddl/Create_table.sql",
+		"/E/001_dev/workspace/ex03/src/main/resources/log4j.xml",
+		"/C/Users/devLsy_noteBook/Desktop/download/wildfly-14.0.0.Final/standalone/configuration/standalone.xml",
+		"/E/001_dev/workspace/ex06_2/src/main/java/org/zerock/controller/SampleController.java",
+		"/E/001_dev/workspace/ex03/src/main/java/org/zerock/controller/SampleController.java",
+		"/C/sts-3.9.6.RELEASE-e4.9.0-win32/sts-bundle/sts-3.9.6.RELEASE/STS.ini",
+		"/C/Users/devLsy_noteBook/Desktop/2.html",
+		"/E/001_dev/workspace/ex06_2/pom.xml",
+		"/C/Users/devLsy_noteBook/Desktop/download/wildfly-14.0.0.Final/standalone/configuration/standalone-ha.xml",
+		"/C/Users/devLsy_noteBook/Desktop/send_slack.py",
+		"/C/Users/devLsy_noteBook/Desktop/wb.py",
+		"/C/Users/devLsy_noteBook/Desktop/slacker.py",
+		"/C/Users/devLsy_noteBook/Desktop/html/191016.html",
+		"/E/001_dev/source/HTML/Head First HTML anb CSS(개정판)/source/chapter9/lounge/lounge-print.css",
+		"/E/001_dev/source/HTML/Head First HTML anb CSS(개정판)/source/chapter9/lounge/lounge.html",
+		"/E/001_dev/source/HTML/Head First HTML anb CSS(개정판)/source/chapter7/lounge.html",
+		"/C/Users/devLsy_noteBook/Desktop/html/22.html",
+		"/E/002_util/dev/devTool/Sublime Text/Data/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/C/Users/devLsy_noteBook/Desktop/html/191015.html",
+		"/C/Users/devLsy_noteBook/Desktop/html/sftp-config.json",
+		"/C/Users/devLsy_noteBook/Desktop/html/tst2.html",
+		"/E/002_util/dev/devTool/Sublime Text/Data/Packages/User/ColorHighlighter.sublime-settings",
+		"/C/Users/devLsy_noteBook/Desktop/html/191015_2.html",
+		"/C/Users/devLsy_noteBook/Desktop/html/tst.html",
+		"/C/Users/devLsy_noteBook/Desktop/html/191015_3.html",
+		"/E/001_dev/source/HTML/Head First HTML anb CSS(개정판)/source/chapter12/starbuzz/index.html",
+		"/E/001_dev/source/HTML/Head First HTML anb CSS(개정판)/source/chapter10/lounge/lounge.html",
+		"/C/Users/devLsy_noteBook/Desktop/191011/국가보훈처 취업정보시스템_bak/per_index.html",
+		"/C/Users/devLsy_noteBook/Desktop/191011/국가보훈처 취업정보시스템/ent_index.html",
+		"/C/Users/devLsy_noteBook/Desktop/191011/국가보훈처 취업정보시스템/per_index.html",
+		"/C/Users/devLsy_noteBook/Desktop/21.html",
+		"/C/Users/devLsy_noteBook/Desktop/191011/국가보훈처 취업정보시스템/css/main.css",
+		"/C/Users/devLsy_noteBook/Desktop/191011/국가보훈처 취업정보시스템/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/191010/국가보훈처/css/main.css",
+		"/C/Users/devLsy_noteBook/Desktop/191010/국가보훈처/js/main.js",
+		"/C/Users/devLsy_noteBook/Desktop/191010/국가보훈처/css/responsive.css",
+		"/C/Users/devLsy_noteBook/Desktop/191010/국가보훈처/css/prettyPhoto.css",
+		"/C/Users/devLsy_noteBook/Desktop/191010/국가보훈처/css/animate.min.css",
+		"/C/Users/devLsy_noteBook/Desktop/191010/국가보훈처/css/bootstrap.min.css",
+		"/C/Users/devLsy_noteBook/Desktop/191010/한국학중앙연구원/index.html",
+		"//192.168.0.8/xampp/htdocs/xe/wjdcjrltlfrl/오답노트/오답 복습 ing/정처기_기출_오답노트(복습 ing).html",
+		"//192.168.0.8/xampp/htdocs/xe/wjdcjrltlfrl/오답노트/오답 복습/정처기_기출_오답노트(복습).html",
+		"/C/Users/devLsy_noteBook/Desktop/정보처리기사/오답노트/오답 복습/정처기_기출_오답노트(복습).html",
+		"/C/Users/devLsy_noteBook/Desktop/정처기_기출_오답노트(복습).html",
+		"/C/Users/devLsy_noteBook/Desktop/3.html",
+		"//192.168.0.8/xampp/htdocs/xe/wjdcjrltlfrl/오답노트/정처기_기출_오답노트.html",
+		"//192.168.0.8/xampp/htdocs/xe/wjdcjrltlfrl/오답노트/정처기_정실이_신기술_오탑노트.html",
+		"//192.168.0.8/container/apache-tomcat-8.5.37/webapps/ROOT/정처기_기출_오답노트.html",
+		"//192.168.0.8/001_iansystem/002_work/이안시스템_유지보수 게시판 관련/itil에 근거한 서비스 관리/itil에 근거한 서비스 관리_정리_내부용.txt",
+		"/E/003_iansystem/work/smart-toy/doc/google api 관련/google assistant 호출과정.txt",
+		"/E/003_iansystem/work/smart-toy/doc/google api 관련/dialog flow의 Fulfillment.txt",
+		"/E/003_iansystem/work/smart-toy/doc/google api 관련/dialog flow의 stt, tts까지의 호출과정.txt",
+		"/E/003_iansystem/work/smart-toy/doc/라즈베리파이-구글어시스턴트 api 호출.txt",
+		"/E/003_iansystem/work/smart-toy/doc/라즈베리파이-구글어시스턴트 세팅 이슈사항.txt",
+		"//192.168.0.8/001_iansystem/002_work/smart-toy/라즈베리파이-구글어시스턴트 세팅 이슈사항.txt",
+		"//192.168.0.8/001_iansystem/002_work/smart-toy/라즈베리파이-구글어시스턴트 api 호출.txt",
+		"/E/003_iansystem/work/smart-toy/doc/라즈베리파이 설치 가이드.txt",
+		"/C/Users/devLsy_noteBook/Desktop/job/smart-toy/env/lib/python3.7/site-packages/googlesamples/assistant/grpc/assistant_helpers.py",
+		"/C/Users/devLsy_noteBook/Desktop/job/smart-toy/env/lib/python3.7/site-packages/googlesamples/assistant/grpc/audio_helpers.py",
+		"/C/Users/devLsy_noteBook/Desktop/python-docs-samples-master/dialogflow/cloud-client/detect_intent_stream.py",
+		"/C/Users/devLsy_noteBook/Desktop/env/lib/python3.7/site-packages/googlesamples/assistant/grpc/pushtotalk.py",
+		"/C/Users/devLsy_noteBook/Desktop/python-docs-samples-master/texttospeech/cloud-client/synthesize_text.py",
+		"/C/Users/devLsy_noteBook/Desktop/python-docs-samples-master/dialogflow/cloud-client/detect_intent_with_texttospeech_response.py",
+		"/C/Users/devLsy_noteBook/Desktop/python-docs-samples-master/texttospeech/cloud-client/quickstart.py",
+		"/C/Users/devLsy_noteBook/Desktop/jsonFileGenerator.py",
+		"//192.168.0.8/xampp/htdocs/xe/devLsy_html/tst/css/main.css",
+		"//192.168.0.8/xampp/htdocs/xe/devLsy_html/tst/index.html",
+		"//192.168.0.8/xampp/htdocs/xe/devLsy_html/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/asoundrc_file.txt",
+		"/C/Users/devLsy_noteBook/Desktop/pushtotalk.py",
+		"/C/Users/devLsy_noteBook/Desktop/ian-toy-dialogflow-0070495fd78f.json",
+		"/C/Users/devLsy_noteBook/Desktop/client_secret_1009629551184-cis6eftdkvh62mkjlt56592gb7sets99.apps.googleusercontent.com.json",
+		"/C/Users/devLsy_noteBook/Desktop/20190821/client_secret_113891076402-h6ihaidh8i6h0kjp183rgodlovp8k52o.apps.googleusercontent.com.json",
+		"/C/Users/devLsy_noteBook/Desktop/[google Assistant api 사용]",
+		"/C/Users/devLsy_noteBook/Desktop/asoundrc_file",
+		"/C/Users/devLsy_noteBook/Desktop/20190820/client_secret_543685662986-qnt80brbisb4v1tu1v5u4abl8ho88l19.apps.googleusercontent.com.json",
+		"/E/001_dev/source/java/코드로 배우는 스프링 웹 프로젝트(개정판)/파트1_파트7까지/파트7/pom.xml",
+		"/E/001_dev/gitProject/devLsy.github.io/_layouts/default.html",
+		"/E/001_dev/gitProject/devLsy.github.io/_config.yml",
+		"/E/001_dev/gitProject/devLsy.github.io/changelog.html",
+		"/E/001_dev/gitProject/devLsy.github.io/search.html",
+		"/E/001_dev/source/java/코드로 배우는 스프링 웹 프로젝트(개정판)/파트1_파트7까지/파트3/웹관련코드/WEB-INF/web.xml",
+		"/E/001_dev/gitProject/javaProject/yagaProject/yaga/src/main/webapp/WEB-INF/views/board/list.jsp",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/weather/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원 한국학대학원/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원 한국학대학원/css/style.css",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원 한국학대학원/assets/css/style.css",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원 한국학대학원/assets/css/main.css",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원대학원/css/style.css",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원대학원/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/한국학중앙연구원/css/main.css",
+		"/C/Users/devLsy_noteBook/Desktop/제안관련/corlate/index.html",
+		"/C/Users/devLsy_noteBook/Desktop/fullcalendar-4.2.0/tmp.html",
+		"/C/Users/devLsy_noteBook/Desktop/fullcalendar.html",
+		"//192.168.0.7/xampp/htdocs/nonla/files/_debug_db_query.php",
+		"//192.168.0.7/xampp/htdocs/nonla/files/_debug_message.php",
+		"/E/003_iansystem/work/vnpotal 관련/NonLa/001_이슈 처리 관련/이슈 처리 관련_20190723_1855",
+		"/E/003_iansystem/work/vnpotal 관련/NonLaMall/001_이슈 처리 관련/이슈 처리 관련_20190718_1800.txt",
+		"/E/003_iansystem/work/vnpotal 관련/NonLa/001_이슈 처리 관련/이슈 처리 관련_20190723_1855.txt",
+		"//192.168.0.7/xampp/htdocs/nonla/layouts/portal_NOVA/inc/conten_area/side_contents_Rbox.html",
+		"//192.168.0.7/xampp/htdocs/nonla/layouts/portal_NOVA/inc/conten_area/side_contents_Lbox.html"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 107.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "lotto.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 50.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
