@@ -196,7 +196,7 @@
 				}
 			});
 		}	
-
+		
 		// 로또 생성
 		Lotto.prototype.makeLotto = function() {
 			this.lottoNumber = new Array(6);
@@ -227,7 +227,7 @@
 			this.$makedArea.html("");
 			$("#input").val("");
 		}
-					
+						
 		// 타이머 중지
 		Lotto.prototype.stopImage = function() {
 			clearInterval(this.timerID);
